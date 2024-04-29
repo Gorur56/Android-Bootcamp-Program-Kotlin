@@ -30,4 +30,11 @@ fun main() {
     sahin.bilgiAl()
     sahin.durdur()
     sahin.bilgiAl()
+
+
+    sahin.hizlan(50)
+    sahin.bilgiAl()
+
+    sahin.yavasla(5)
+    sahin.bilgiAl()
 }
