@@ -35,4 +35,41 @@ class Odev2 {
         }
         return eSayisi
     }
+
+    fun sumEdge(kenarSayisi:Int) : Int{
+        val sonuc = ((kenarSayisi - 2) * 180) / kenarSayisi
+        return sonuc
+    }
+
+    fun maasHesapla(gun:Int) : Int{
+        val toplamSaat = gun * 8;
+
+        var mesai = 0;
+
+        var maas = 0
+
+        if( toplamSaat <= 150)
+        {
+            maas = toplamSaat * 40;
+            return maas
+        }
+
+        mesai = toplamSaat - 150
+        maas = ( 150 * 40 ) + (mesai * 80)
+        return maas
+    }
+
+    fun otoparkUcreti( saat:Int) : Int
+    {
+        var ucret = 50
+        if ( saat == 1)
+        {
+            return ucret
+        }
+        else
+        {
+            ucret += (saat - 1) * 10
+            return ucret
+        }
+    }
 }

@@ -22,4 +22,27 @@ fun main() {
 
     val sum = odev.eHarfiSayisi(kelime)
     println("$kelime 'nin içinde $sum tane e harfi vardır.")
+
+
+    //ODEV5 Parametre olarak girilen kenar sayısına göre her bir iç açıyı hesaplayıp sonucu geri gönderen metod
+    //yazınız. İç açılar toplamı = ( (Kenar sayısı - 2) x 180 ) / Kenar sayısı
+
+    val sumEdge = odev.sumEdge(12)
+    println("İç açılarının Toplamı: $sumEdge")
+
+    // ODEV6: Parametre olarak girilen gün sayısına göre maaş hesabı yapan ve elde edilen değeri döndüren metod yazınız.
+    //• 1 günde 8 saat çalışılabilir.
+    //• Çalışma saat ücreti : 40 ₺
+    //• Mesai saat ücreti : 80 ₺
+    //• 150 saat üzeri mesai sayılır.
+
+    val topMaas = odev.maasHesapla(20)
+    println("Toplam maaş: $topMaas")
+
+
+    //ODEV7: Parametre olarak girilen otopark süresine göre otopark ücreti hesaplayarak geri döndüren metodu yazınız.
+    //• 1 saat = 50 ₺
+    //• 1 saat aşımından sonra her 1 saat , 10 ₺’dir.
+    val ucret = odev.otoparkUcreti(5)
+    println("Otopark Ücreti : ${ucret}")
 }
