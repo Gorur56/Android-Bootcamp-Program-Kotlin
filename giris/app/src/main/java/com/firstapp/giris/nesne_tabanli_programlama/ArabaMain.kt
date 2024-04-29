@@ -5,9 +5,11 @@ fun main() {
     val bmw = Araba("Kırmızı",0,true)
 
     //Okuma
-    println("Renk          : ${bmw.renk}")
+    /*println("Renk          : ${bmw.renk}")
     println("Hız           : ${bmw.hiz}")
-    println("Çalışıyor mu  : ${bmw.calisiyormu}")
+    println("Çalışıyor mu  : ${bmw.calisiyormu}")*/
+
+    bmw.bilgiAl()
 
     //Veri Atama
 
@@ -17,14 +19,12 @@ fun main() {
     println("----------------------------------------------")
 
     //Okuma
-    println("Renk          : ${bmw.renk}")
-    println("Hız           : ${bmw.hiz}")
-    println("Çalışıyor mu  : ${bmw.calisiyormu}")
+    bmw.bilgiAl()
 
     println("---------------------------------------------")
     val sahin = Araba("Beyaz",100,false)
 
-    println("Renk         : ${sahin.renk}")
-    println("Hız          : ${sahin.hiz}")
-    println("Çalışıyor mu : ${sahin.calisiyormu}")
+    //okuma
+    sahin.bilgiAl()
+
 }
