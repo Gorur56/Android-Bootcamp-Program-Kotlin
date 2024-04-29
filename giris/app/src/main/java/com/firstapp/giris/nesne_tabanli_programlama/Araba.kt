@@ -3,10 +3,11 @@ package com.firstapp.giris.nesne_tabanli_programlama
 class Araba(var renk:String, var hiz:Int, var calisiyormu:Boolean){ //Constructer Nesne oluştuğu anda ilk çalışan methoddur.
 
     //bir class 'tan nesne oluşturduğumuz zaman çalışan fonksiyon init
+    //Her nesne oluşturulduğunda çalışıyor.
     init {
         println("Constructor Çalıştı...")
     }
-    
+
     //Tekrar eden olaylar için fonksiyon oluşturma
 
     fun calistir(){ //Side effect Fonksiyon ile sınıfın özelliklerini değiştirebilme
