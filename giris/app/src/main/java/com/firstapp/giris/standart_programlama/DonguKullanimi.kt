@@ -23,4 +23,41 @@ fun main(){
         println("Azalan döngü: $b")
     }
 
+    //While Döngüsü
+    var sayac = 1
+
+    while (sayac < 6)
+    {
+        println("Sayaç: $sayac")
+
+        //sayac = sayac + 1
+        //sayac += 1
+        sayac++
+    }
+
+    println()
+
+    //Döngüleri durdurmak veya bazı
+
+    for ( x in 1..5 )
+    {
+        if( x == 3 )
+        {
+            break //Bu koşula girince for döngüsünü durdurur.
+        }
+
+        println("Döngü x: $x")
+    }
+
+    println()
+
+    for (y in 1..5)
+    {
+        if ( y == 3)
+        {
+            continue //Bu koşula girince aşağıdakileri çalıştırmaz.
+        }
+
+        println("Döngü y: $y")
+    }
 }
