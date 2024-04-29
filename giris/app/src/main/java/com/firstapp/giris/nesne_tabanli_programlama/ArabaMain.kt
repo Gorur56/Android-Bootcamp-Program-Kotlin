@@ -20,11 +20,14 @@ fun main() {
 
     //Okuma
     bmw.bilgiAl()
+    bmw.calistir()
+    bmw.bilgiAl()
 
     println("---------------------------------------------")
-    val sahin = Araba("Beyaz",100,false)
+    val sahin = Araba("Beyaz",100,true)
 
     //okuma
     sahin.bilgiAl()
-
+    sahin.durdur()
+    sahin.bilgiAl()
 }
