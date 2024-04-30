@@ -1,7 +1,11 @@
 package com.firstapp.giris.nesne_tabanli_programlama
 
-class Araba(var renk:String, var hiz:Int, var calisiyormu:Boolean){ //Constructer Nesne oluştuğu anda ilk çalışan methoddur.
+data class Araba(var renk:String, var hiz:Int, var calisiyormu:Boolean){ //Constructer Nesne oluştuğu anda ilk çalışan methoddur.
 
+    //Burada java veya diğer dillerdeki gibi kapsülleme ile get set oluşturmuyoruz.
+    //data keyword 'ü sınıfın başına yazınca bizim için arka planda oluşturuyor.
+
+    private var str = "Merhaba"
     //bir class 'tan nesne oluşturduğumuz zaman çalışan fonksiyon init
     //Her nesne oluşturulduğunda çalışıyor.
     init {
