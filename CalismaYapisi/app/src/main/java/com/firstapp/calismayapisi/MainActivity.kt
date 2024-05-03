@@ -30,7 +30,15 @@ class MainActivity : AppCompatActivity() {
             //binding.textView.text = "Nasılsın"
 
             val intent = Intent(this@MainActivity, DetayActivity::class.java)
+
+            //Veri transferi yapabilmek için sayfa geçişi olamk zorundadır.
+            intent.putExtra("ad","Ahmet") //key,Value
+            intent.putExtra("yas",23)
+            intent.putExtra("boy",1.78)
+            intent.putExtra("bekar",true)
             startActivity(intent)
+
+
         }
     }
 }

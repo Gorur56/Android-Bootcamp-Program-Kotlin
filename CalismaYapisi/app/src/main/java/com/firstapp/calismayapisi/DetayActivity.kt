@@ -21,6 +21,11 @@ class DetayActivity : AppCompatActivity() {
             insets
         }
 
-        binding.textViewBilgi.text = "Merhaba"
+        val gelenAd = intent.getStringExtra("ad") //MainActivity ^de key ile burada key aynı olmalıdır.
+        val gelenYas = intent.getIntExtra("yas",0) //Default 0
+        val gelenBoy = intent.getDoubleExtra("boy",0.0) //Defult 0.0
+        val gelenBekarDurum = intent.getBooleanExtra("bekar", true) //Default true
+
+        binding.textViewBilgi.text = "$gelenAd - $gelenYas - $gelenBoy - $gelenBekarDurum"
     }
 }
