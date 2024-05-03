@@ -1,6 +1,8 @@
 package com.firstapp.calismayapisi
 
+import android.content.Intent
 import android.os.Bundle
+import android.provider.Telephony.Mms.Intents
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -22,9 +24,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonDetay.setOnClickListener {
-            Snackbar.make(it, "Merhaba", Snackbar.LENGTH_SHORT).show()
+            //Snackbar.make(it, "Merhaba", Snackbar.LENGTH_SHORT).show()
+
             //Butona basınca anasayfa NAsılsın olcak
-            binding.textView.text = "Nasılsın"
+            //binding.textView.text = "Nasılsın"
+
+            val intent = Intent(this@MainActivity, DetayActivity::class.java)
+            startActivity(intent)
         }
     }
 }
