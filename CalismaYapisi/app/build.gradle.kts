@@ -7,6 +7,10 @@ android {
     namespace = "com.firstapp.calismayapisi"
     compileSdk = 34
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.firstapp.calismayapisi"
         minSdk = 19
