@@ -1,6 +1,7 @@
 package com.firstapp.navigationcomponentkullanimi
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -29,5 +30,25 @@ class AnasayfaFragment : Fragment() {
             //Navigation.findNavController(it).navigate(R.id.detay_gecis) //Butona basında detay sayfasına geçiş yapar.
         }
         return binding.root
+    }
+
+    //YAŞAM DÖNGÜSÜ
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        //Uygulama çalıştırıldığında bir kere çalışır.
+        Log.e("Yaşam Döngüsü", "onCreate")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        //Sayfa görünmez halde çalışan fonksiyondur.
+        Log.e("Yaşam Döngüsü", "onPause")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        //Sayfa gönürken çalışır.
+        Log.e("Yaşam Döngüsü", "onResume")
     }
 }
