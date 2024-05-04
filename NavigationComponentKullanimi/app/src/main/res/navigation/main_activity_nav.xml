@@ -12,7 +12,9 @@
         tools:layout="@layout/fragment_anasayfa" >
         <action
             android:id="@+id/detay_gecis"
-            app:destination="@id/detayFragment" />
+            app:destination="@id/detayFragment"
+            app:popUpTo="@id/anasayfaFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/detayFragment"
