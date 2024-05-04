@@ -6,11 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.firstapp.navigationcomponentkullanimi.databinding.FragmentAnasayfaBinding
+import com.google.android.material.snackbar.Snackbar
 
 class AnasayfaFragment : Fragment() {
     private lateinit var binding:FragmentAnasayfaBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_anasayfa, container, false)
+        binding = FragmentAnasayfaBinding.inflate(inflater, container, false)
+
+        binding.buttonDetay.setOnClickListener {
+            Snackbar.make(it,"Merhaba",Snackbar.LENGTH_SHORT).show()
+            binding.textView.text = "Nasılsın"
+        }
+        return binding.root
     }
 }
