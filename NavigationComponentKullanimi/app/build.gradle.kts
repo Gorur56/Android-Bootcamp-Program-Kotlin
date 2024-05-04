@@ -7,6 +7,10 @@ android {
     namespace = "com.firstapp.navigationcomponentkullanimi"
     compileSdk = 34
 
+    buildFeatures{
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.firstapp.navigationcomponentkullanimi"
         minSdk = 19
