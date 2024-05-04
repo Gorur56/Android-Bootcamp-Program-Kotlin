@@ -35,5 +35,8 @@
             android:name="bekar"
             app:argType="boolean"
             android:defaultValue="false" />
+        <argument
+            android:name="urun"
+            app:argType="com.firstapp.navigationcomponentkullanimi.Urunler" />
     </fragment>
 </navigation>

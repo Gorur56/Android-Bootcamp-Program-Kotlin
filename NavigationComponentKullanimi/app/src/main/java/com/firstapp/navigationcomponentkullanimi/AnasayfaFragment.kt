@@ -18,7 +18,15 @@ class AnasayfaFragment : Fragment() {
         binding.buttonDetay.setOnClickListener {
             //Snackbar.make(it,"Merhaba",Snackbar.LENGTH_SHORT).show()
             //binding.textView.text = "Nasılsın"
-            Navigation.findNavController(it).navigate(R.id.detay_gecis) //Burona basında detay sayfasına geçiş yapar.
+
+            val urun = Urunler(100,"TV")
+
+            // Directions veri gönderende olur.
+            val gecis = AnasayfaFragmentDirections.detayGecis( urun = urun, ad = "Ahmet", yas = 23, boy = 1.78f, bekar = true)
+
+            Navigation.findNavController(it).navigate(gecis)
+
+            //Navigation.findNavController(it).navigate(R.id.detay_gecis) //Butona basında detay sayfasına geçiş yapar.
         }
         return binding.root
     }
