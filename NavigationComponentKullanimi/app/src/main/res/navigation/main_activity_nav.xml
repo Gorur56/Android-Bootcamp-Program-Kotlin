@@ -41,4 +41,9 @@
             android:name="urun"
             app:argType="com.firstapp.navigationcomponentkullanimi.Urunler" />
     </fragment>
+    <fragment
+        android:id="@+id/ayarlarFragment"
+        android:name="com.firstapp.navigationcomponentkullanimi.AyarlarFragment"
+        android:label="fragment_ayarlar"
+        tools:layout="@layout/fragment_ayarlar" />
 </navigation>
