@@ -28,11 +28,19 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonResim1.setOnClickListener {
-            binding.imageView.setImageResource(R.drawable.resim1)
+            //binding.imageView.setImageResource(R.drawable.resim1)
+
+            //Eğer veritabanından resmi alacaksak aşağıdaki gibi düzenlememiz gerekiyor.
+
+            binding.imageView.setImageResource(resources.getIdentifier("resim1","drawable", packageName))
         }
 
         binding.buttonResim2.setOnClickListener {
-            binding.imageView.setImageResource(R.drawable.resim2)
+            //binding.imageView.setImageResource(R.drawable.resim2)
+
+            //Eğer veritabanından resmi alacaksak aşağıdaki gibi düzenlememiz gerekiyor.
+
+            binding.imageView.setImageResource(resources.getIdentifier("resim2","drawable", packageName))
         }
     }
 }
