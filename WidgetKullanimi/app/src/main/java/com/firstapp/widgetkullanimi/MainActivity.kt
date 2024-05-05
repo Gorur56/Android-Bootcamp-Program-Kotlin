@@ -1,6 +1,7 @@
 package com.firstapp.widgetkullanimi
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -41,6 +42,19 @@ class MainActivity : AppCompatActivity() {
             //Eğer veritabanından resmi alacaksak aşağıdaki gibi düzenlememiz gerekiyor.
 
             binding.imageView.setImageResource(resources.getIdentifier("resim2","drawable", packageName))
+        }
+
+
+        binding.switch1.setOnCheckedChangeListener { buttonView, isChecked ->
+            //buttonView = switch1
+            if( isChecked)
+            {
+                Log.e("Widgets","Switch: ON")
+            }
+            else
+            {
+                Log.e("Widgets","Switch: OFF")
+            }
         }
     }
 }
