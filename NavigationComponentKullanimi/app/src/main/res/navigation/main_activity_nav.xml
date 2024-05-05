@@ -15,6 +15,9 @@
             app:destination="@id/detayFragment"
             app:popUpTo="@id/anasayfaFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/bottom_sheet_gecis"
+            app:destination="@id/bottomSheetFragment" />
     </fragment>
     <fragment
         android:id="@+id/detayFragment"
@@ -46,4 +49,9 @@
         android:name="com.firstapp.navigationcomponentkullanimi.AyarlarFragment"
         android:label="fragment_ayarlar"
         tools:layout="@layout/fragment_ayarlar" />
+    <dialog
+        android:id="@+id/bottomSheetFragment"
+        android:name="com.firstapp.navigationcomponentkullanimi.BottomSheetFragment"
+        android:label="fragment_bottom_sheet"
+        tools:layout="@layout/fragment_bottom_sheet" />
 </navigation>

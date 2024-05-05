@@ -29,6 +29,10 @@ class AnasayfaFragment : Fragment() {
 
             //Navigation.findNavController(it).navigate(R.id.detay_gecis) //Butona basında detay sayfasına geçiş yapar.
         }
+
+        binding.buttonGoster.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.bottom_sheet_gecis)
+        }
         return binding.root
     }
 
