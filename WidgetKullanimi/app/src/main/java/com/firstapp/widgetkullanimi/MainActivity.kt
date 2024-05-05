@@ -56,5 +56,9 @@ class MainActivity : AppCompatActivity() {
                 Log.e("Widgets","Switch: OFF")
             }
         }
+
+        binding.buttonGoster.setOnClickListener {
+            Log.e("Sonuc", "Switch Durum: ${binding.switch1.isChecked}")
+        }
     }
 }
