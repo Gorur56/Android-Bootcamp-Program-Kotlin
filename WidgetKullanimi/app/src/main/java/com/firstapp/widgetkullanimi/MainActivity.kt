@@ -20,5 +20,11 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        binding.buttonOku.setOnClickListener {
+            val alinanVeri = binding.editTextGirdi.text.toString() //Edittexten veriyi al
+
+            binding.textViewsonuc.text = alinanVeri // alınan veriyi textview 'e ekle.
+        }
     }
 }
