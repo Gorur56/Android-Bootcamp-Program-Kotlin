@@ -26,5 +26,13 @@ class MainActivity : AppCompatActivity() {
 
             binding.textViewsonuc.text = alinanVeri // alınan veriyi textview 'e ekle.
         }
+
+        binding.buttonResim1.setOnClickListener {
+            binding.imageView.setImageResource(R.drawable.resim1)
+        }
+
+        binding.buttonResim2.setOnClickListener {
+            binding.imageView.setImageResource(R.drawable.resim2)
+        }
     }
 }
