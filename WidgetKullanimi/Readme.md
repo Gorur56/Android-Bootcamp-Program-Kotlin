@@ -29,6 +29,9 @@
 * Visible - Invisible
 ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/870c9f0a-a9e4-499b-9bdf-c422bab4c430) ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/ac2abf60-1911-46c0-bdfe-09f290d73d74)
 
+## Slider ( SeekBar ) 
+
+![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/3e2eca9b-0928-490e-8464-3bb12d8cb401) ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/2f8ae157-d27f-4db1-9226-0141d1b18639)
 
 
 
