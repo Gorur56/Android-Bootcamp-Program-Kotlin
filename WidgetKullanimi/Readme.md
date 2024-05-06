@@ -15,7 +15,8 @@
 
 * Birincisi standart true, false mantığıyla çalışan toggle dır. Diğeri yanyana butonlardan oluşan toggle 'lardır. Tekli veya çoklu seçim yapacak şekilde ayarlayabiliriz.
 
-  ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/7d951e66-857d-4d1d-a45f-30eb11eac003)
+  ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/7d951e66-857d-4d1d-a45f-30eb11eac003) ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/75942210-765c-41ff-95d3-17ed378f37b9)
+
 
 ## Expose DropDown Menu
 
