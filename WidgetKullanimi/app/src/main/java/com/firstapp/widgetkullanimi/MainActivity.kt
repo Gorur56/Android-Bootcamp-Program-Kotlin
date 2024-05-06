@@ -11,6 +11,7 @@ import com.firstapp.widgetkullanimi.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private var control = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -59,20 +60,29 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.toggleButton.addOnButtonCheckedListener { materialButtonToggleGroup, checkedId, isChecked ->
-            //checkedId verimli çalışmadığı için toggleButton 'dan alacağız.
-            val secilenButton = findViewById<Button>(binding.toggleButton.checkedButtonId)
+            //çift tıklanmasını engelleme
+            control = isChecked
 
-            val secilenButtonYazi = secilenButton.text.toString()
+            if(control)
+            {
+                //checkedId verimli çalışmadığı için toggleButton 'dan alacağız.
+                val secilenButton = findViewById<Button>(binding.toggleButton.checkedButtonId)
+                val secilenButtonYazi = secilenButton.text.toString()
+                Log.e("Sonuc: ", secilenButtonYazi)
+            }
 
-            Log.e("Sonuc: ", secilenButtonYazi)
         }
 
         binding.buttonGoster.setOnClickListener {
             Log.e("Sonuc", "Switch Durum: ${binding.switch1.isChecked}")
 
-            val secilenButton = findViewById<Button>(binding.toggleButton.checkedButtonId)
-            val secilenButtonYazi = secilenButton.text.toString()
-            Log.e("Sonuc: ", "Toggle Durum: $secilenButtonYazi")
+            //Çift tıklanma ve çökmemesi için çözüm
+            if(control)
+            {
+                val secilenButton = findViewById<Button>(binding.toggleButton.checkedButtonId)
+                val secilenButtonYazi = secilenButton.text.toString()
+                Log.e("Sonuc: ", "Toggle Durum: $secilenButtonYazi")
+            }
         }
     }
 }
