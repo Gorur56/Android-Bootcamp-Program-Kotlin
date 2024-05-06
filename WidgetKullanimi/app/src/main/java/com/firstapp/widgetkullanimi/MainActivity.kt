@@ -106,6 +106,9 @@ class MainActivity : AppCompatActivity() {
 
         //Slider (SeekBar)
 
+        //Başlangıç değeri
+        binding.textViewSlider.text = binding.slider.progress.toString()
+
         binding.slider.setOnSeekBarChangeListener(object : OnSeekBarChangeListener{ //interface tanımladık.
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 //Değişim olduğunda
