@@ -2,6 +2,7 @@ package com.firstapp.widgetkullanimi
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.ArrayAdapter
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -59,6 +60,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        //Toggle Group: Yanyana butonlar oluşturur ve tekli seçim ve çoklu seçim yapabilriiz.
         binding.toggleButton.addOnButtonCheckedListener { materialButtonToggleGroup, checkedId, isChecked ->
             //çift tıklanmasını engelleme
             control = isChecked
@@ -73,6 +75,20 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        //Expose Dropdown Menu: Kullanıcıdan girdi almamızı sağlar.
+        //Aynı anda girdi, seçim ve otomatik tamamla özelliği vardır.
+
+        val ulkeler = ArrayList<String>()
+        ulkeler.add("Türkiye")
+        ulkeler.add("İtalya")
+        ulkeler.add("Almanya")
+        ulkeler.add("İsviçre")
+        ulkeler.add("Japonya")
+
+        //Hazır tasarım adaptır kullnacağız.
+        val arrayAdapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,ulkeler) //simple_list_item_1 hazır tasarım
+        binding.autoCompleteText.setAdapter(arrayAdapter)
+
         binding.buttonGoster.setOnClickListener {
             Log.e("Sonuc", "Switch Durum: ${binding.switch1.isChecked}")
 
@@ -83,6 +99,10 @@ class MainActivity : AppCompatActivity() {
                 val secilenButtonYazi = secilenButton.text.toString()
                 Log.e("Sonuc: ", "Toggle Durum: $secilenButtonYazi")
             }
+
+            val ulke = binding.autoCompleteText.text.toString()
+
+            Log.e("Sonuc", "ülke: $ulke")
         }
     }
 }
