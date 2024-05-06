@@ -136,6 +136,9 @@ class MainActivity : AppCompatActivity() {
             val ulke = binding.autoCompleteText.text.toString()
 
             Log.e("Sonuc", "ülke: $ulke")
+
+            //Slider Durum
+            Log.e("Sonuc", "Slider Durum: ${binding.slider.progress}")
         }
     }
 }
