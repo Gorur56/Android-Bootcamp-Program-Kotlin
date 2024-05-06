@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.firstapp.widgetkullanimi.databinding.ActivityMainBinding
+import com.google.android.material.timepicker.MaterialTimePicker
+import com.google.android.material.timepicker.TimeFormat
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -121,6 +123,19 @@ class MainActivity : AppCompatActivity() {
             override fun onStopTrackingTouch(seekBar: SeekBar?) { //Dokunmayı bıraktığımızda
             }
         })
+
+        binding.buttonSaat.setOnClickListener {
+            val timePicker = MaterialTimePicker.Builder()
+                .setTitleText("Saat Seç")
+                .setTimeFormat(TimeFormat.CLOCK_24H) //CLOCK_12H
+                .build()
+
+            timePicker.show(supportFragmentManager,"Saat")
+        }
+
+        binding.buttonTarih.setOnClickListener {
+
+        }
 
         binding.buttonGoster.setOnClickListener {
             Log.e("Sonuc", "Switch Durum: ${binding.switch1.isChecked}")
