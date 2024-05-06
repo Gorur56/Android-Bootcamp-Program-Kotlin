@@ -2,6 +2,7 @@ package com.firstapp.widgetkullanimi
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
@@ -92,6 +93,14 @@ class MainActivity : AppCompatActivity() {
 
         //Progressbar: visible (Görünür), invisible (progressbar bar görünmez. Ama tıklayınca kare çizer(seçer) ),
         // gone( Hem görünmez hem tıklayınca seçmez.)
+
+        binding.buttonBasla.setOnClickListener {
+            binding.progressBar.visibility = View.VISIBLE
+        }
+
+        binding.buttonDur.setOnClickListener {
+            binding.progressBar.visibility = View.INVISIBLE
+        }
 
         binding.buttonGoster.setOnClickListener {
             Log.e("Sonuc", "Switch Durum: ${binding.switch1.isChecked}")
