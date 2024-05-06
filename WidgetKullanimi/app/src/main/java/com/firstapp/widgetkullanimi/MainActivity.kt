@@ -89,6 +89,10 @@ class MainActivity : AppCompatActivity() {
         val arrayAdapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,ulkeler) //simple_list_item_1 hazır tasarım
         binding.autoCompleteText.setAdapter(arrayAdapter)
 
+
+        //Progressbar: visible (Görünür), invisible (progressbar bar görünmez. Ama tıklayınca kare çizer(seçer) ),
+        // gone( Hem görünmez hem tıklayınca seçmez.)
+
         binding.buttonGoster.setOnClickListener {
             Log.e("Sonuc", "Switch Durum: ${binding.switch1.isChecked}")
 
