@@ -1,5 +1,6 @@
 package com.firstapp.widgetkullanimi
 
+import android.icu.text.SimpleDateFormat
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -12,8 +13,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.firstapp.widgetkullanimi.databinding.ActivityMainBinding
+import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -131,10 +134,24 @@ class MainActivity : AppCompatActivity() {
                 .build()
 
             timePicker.show(supportFragmentManager,"Saat")
+
+            timePicker.addOnPositiveButtonClickListener {
+                binding.editTextTextSaat.setText("${timePicker.hour} : ${timePicker.minute}")
+            }
         }
 
         binding.buttonTarih.setOnClickListener {
+            val datePicker = MaterialDatePicker.Builder.datePicker()
+                .setTitleText("Tarih Seç")
+                .build()
 
+            datePicker.show(supportFragmentManager,"Tarih")
+
+            datePicker.addOnPositiveButtonClickListener {
+                val df = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+                val tarih = df.format(it)
+                binding.editTextTarih.setText(tarih)
+            }
         }
 
         binding.buttonGoster.setOnClickListener {
