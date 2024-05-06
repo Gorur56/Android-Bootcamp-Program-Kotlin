@@ -22,7 +22,7 @@
 
 * Expose Dropdown Menu: Kullanıcıdan girdi almamızı sağlar.
 * Aynı anda girdi, seçim ve otomatik tamamla özelliği vardır.
-        
+
 ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/0fac0877-a244-4300-9e61-54d2f9014bc0) ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/f9a1aa91-15ef-4a60-b87f-2fad33e1fad5)
 
 ## Progress Bar
@@ -32,6 +32,16 @@
 ## Slider ( SeekBar ) 
 
 ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/3e2eca9b-0928-490e-8464-3bb12d8cb401) ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/2f8ae157-d27f-4db1-9226-0141d1b18639)
+
+## Time Picker
+
+![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/92174eaf-c92b-4d30-8ea9-a2a916558a63) ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/cf936ac6-8445-4a6c-a71d-131c31563dbf)
+
+## Date Picker
+
+![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/81ac3e5c-661a-404b-bb75-d7326db4ba8f) ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/9eb6d7db-5cba-46b9-b456-8dd39b1943b3)
+
+
 
 
 
