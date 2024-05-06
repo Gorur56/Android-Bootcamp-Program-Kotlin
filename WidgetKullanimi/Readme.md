@@ -25,6 +25,10 @@
         
 ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/0fac0877-a244-4300-9e61-54d2f9014bc0) ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/f9a1aa91-15ef-4a60-b87f-2fad33e1fad5)
 
+## Progress Bar
+* Visible - Invisible
+![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/870c9f0a-a9e4-499b-9bdf-c422bab4c430) ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/ac2abf60-1911-46c0-bdfe-09f290d73d74)
+
 
 
 
