@@ -22,6 +22,12 @@
 
 * Expose Dropdown Menu: Kullanıcıdan girdi almamızı sağlar.
 * Aynı anda girdi, seçim ve otomatik tamamla özelliği vardır.
+
+## Time Picker
+
+  ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/92174eaf-c92b-4d30-8ea9-a2a916558a63) ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/cf936ac6-8445-4a6c-a71d-131c31563dbf)
+
+
         
 ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/0fac0877-a244-4300-9e61-54d2f9014bc0) ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/f9a1aa91-15ef-4a60-b87f-2fad33e1fad5)
 
