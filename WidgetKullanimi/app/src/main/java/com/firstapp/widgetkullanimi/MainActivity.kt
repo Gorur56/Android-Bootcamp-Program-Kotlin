@@ -2,6 +2,7 @@ package com.firstapp.widgetkullanimi
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -57,8 +58,21 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        binding.toggleButton.addOnButtonCheckedListener { materialButtonToggleGroup, checkedId, isChecked ->
+            //checkedId verimli çalışmadığı için toggleButton 'dan alacağız.
+            val secilenButton = findViewById<Button>(binding.toggleButton.checkedButtonId)
+
+            val secilenButtonYazi = secilenButton.text.toString()
+
+            Log.e("Sonuc: ", secilenButtonYazi)
+        }
+
         binding.buttonGoster.setOnClickListener {
             Log.e("Sonuc", "Switch Durum: ${binding.switch1.isChecked}")
+
+            val secilenButton = findViewById<Button>(binding.toggleButton.checkedButtonId)
+            val secilenButtonYazi = secilenButton.text.toString()
+            Log.e("Sonuc: ", "Toggle Durum: $secilenButtonYazi")
         }
     }
 }
