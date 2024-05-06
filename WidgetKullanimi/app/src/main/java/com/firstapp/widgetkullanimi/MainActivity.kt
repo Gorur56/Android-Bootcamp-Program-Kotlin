@@ -5,6 +5,8 @@ import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.SeekBar
+import android.widget.SeekBar.OnSeekBarChangeListener
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -104,7 +106,18 @@ class MainActivity : AppCompatActivity() {
 
         //Slider (SeekBar)
 
+        binding.slider.setOnSeekBarChangeListener(object : OnSeekBarChangeListener{ //interface tanımladık.
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                //Değişim olduğunda
+                binding.textViewSlider.text = progress.toString()
+            }
 
+            override fun onStartTrackingTouch(seekBar: SeekBar?) { //Dokunmaya başladığımızda
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) { //Dokunmayı bıraktığımızda
+            }
+        })
 
         binding.buttonGoster.setOnClickListener {
             Log.e("Sonuc", "Switch Durum: ${binding.switch1.isChecked}")
