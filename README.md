@@ -25,6 +25,16 @@
 ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/d0979427-0123-4bc3-b862-a6896bcad796) ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/0a59d231-cad4-456a-9d31-2b0e17a41d6c) ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/e162d836-a6b9-4471-99a6-c12957e43007)
 
 # Kotlin Widget Kullanımı
+1. TextView - Edittext - Button
+2. Button - İmages - Button => Change images
+3. Switch Toggle - Group Toggle
+4. Expose DropDown Menu
+5. Progress Bar
+6. Silder (SeekBar)
+7. Time Picker
+8. Date Picker
+![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/07782988-ab7d-4932-aa26-4c80ffea53dd)
+
 
 
 
