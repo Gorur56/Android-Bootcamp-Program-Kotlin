@@ -39,10 +39,13 @@ class MainActivity : AppCompatActivity() {
         binding.buttonSnackBar.setOnClickListener {
             Snackbar.make(it, "Silmek istiyor musunuz?", Snackbar.LENGTH_SHORT)
                 .setAction("EVET"){
-                    Snackbar.make(it, "Silindi.",Snackbar.LENGTH_SHORT).show()
+                    Snackbar.make(it, "Silindi.",Snackbar.LENGTH_SHORT)
+                        .setBackgroundTint(Color.WHITE)
+                        .setTextColor(Color.BLUE)
+                        .show()
                 }
-                .setBackgroundTint(Color.GREEN) //Arkaplan rengi
-                .setTextColor(Color.RED) //YAzı rengi
+                .setBackgroundTint(Color.WHITE) //Arkaplan rengi
+                .setTextColor(Color.RED) //Yazı rengi
                 .show()
         }
 
