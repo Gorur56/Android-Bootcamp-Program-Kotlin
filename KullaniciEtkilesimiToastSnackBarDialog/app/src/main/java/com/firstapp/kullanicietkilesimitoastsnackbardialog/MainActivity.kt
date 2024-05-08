@@ -36,7 +36,11 @@ class MainActivity : AppCompatActivity() {
 
         // Snackbar Kullanımı
         binding.buttonSnackBar.setOnClickListener {
-            Snackbar.make(it, "Merhaba", Snackbar.LENGTH_SHORT).show()
+            Snackbar.make(it, "Silmek istiyor musunuz?", Snackbar.LENGTH_SHORT)
+                .setAction("EVET"){
+                    Snackbar.make(it, "Silindi.",Snackbar.LENGTH_SHORT).show()
+                }
+                .show()
         }
 
         // Dialog Kullanımı
