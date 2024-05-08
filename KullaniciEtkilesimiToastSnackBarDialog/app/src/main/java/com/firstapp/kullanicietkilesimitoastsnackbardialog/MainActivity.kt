@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
 
         // Snackbar Kullanımı
         binding.buttonSnackBar.setOnClickListener {
-
+            Snackbar.make(it, "Merhaba", Snackbar.LENGTH_SHORT).show()
         }
 
         // Dialog Kullanımı
