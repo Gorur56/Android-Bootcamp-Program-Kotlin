@@ -1,6 +1,7 @@
 package com.firstapp.kullanicietkilesimitoastsnackbardialog
 
 import android.app.Activity
+import android.graphics.Color
 import android.os.Bundle
 import android.view.inputmethod.InputBinding
 import android.widget.Toast
@@ -40,6 +41,8 @@ class MainActivity : AppCompatActivity() {
                 .setAction("EVET"){
                     Snackbar.make(it, "Silindi.",Snackbar.LENGTH_SHORT).show()
                 }
+                .setBackgroundTint(Color.GREEN) //Arkaplan rengi
+                .setTextColor(Color.RED) //YAzı rengi
                 .show()
         }
 
