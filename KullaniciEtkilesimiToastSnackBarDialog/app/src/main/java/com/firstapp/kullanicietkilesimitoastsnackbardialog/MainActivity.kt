@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.firstapp.kullanicietkilesimitoastsnackbardialog.databinding.ActivityMainBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
@@ -49,9 +50,20 @@ class MainActivity : AppCompatActivity() {
                 .show()
         }
 
-        // Dialog Kullanımı
+        // Dialog Kullanımı: Sayfa üzerinde açılıp biz seçim yapana kadar bekler.
+        //Pozitif ve negatif butonları vardır.
         binding.buttonDialog.setOnClickListener {
+            MaterialAlertDialogBuilder(this@MainActivity)
+                .setTitle("Başlık")
+                .setMessage("Mesaj")
+                .setPositiveButton("Tamam"){ yazi,iface->
+                    Toast.makeText(this@MainActivity,"Tamam Seçildi", Toast.LENGTH_SHORT).show()
+                }
 
+                .setNegativeButton("İptal"){ yazi,iface->
+                    Toast.makeText(this@MainActivity,"İptal Seçildi.", Toast.LENGTH_SHORT).show()
+                }
+                .show()
         }
     }
 }
