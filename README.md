@@ -33,7 +33,13 @@
 6. Silder (SeekBar)
 7. Time Picker
 8. Date Picker
+
 ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/07782988-ab7d-4932-aa26-4c80ffea53dd)
+
+# TOAST - SNACKERBAR - ALERT DIALOG BUILDER
+
+![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/3be4a34d-b991-47c4-b6c0-31b88178ea87)
+
 
 
 
