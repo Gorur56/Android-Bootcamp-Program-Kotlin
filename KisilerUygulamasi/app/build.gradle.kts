@@ -7,6 +7,10 @@ android {
     namespace = "com.firstapp.kisileruygulamasi"
     compileSdk = 34
 
+    buildFeatures{
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.firstapp.kisileruygulamasi"
         minSdk = 19
