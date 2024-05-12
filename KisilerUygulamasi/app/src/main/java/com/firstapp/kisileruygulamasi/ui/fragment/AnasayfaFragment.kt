@@ -22,7 +22,7 @@ class AnasayfaFragment : Fragment() {
             Navigation.findNavController(it).navigate(R.id.kisiKayitGecis) // it == binding.fab
         }
 
-        binding.detay.setOnClickListener {
+        /*binding.detay.setOnClickListener {
             //Geçici veri göndererek geçiş yapmak
             val kisi = Kisiler(1, "Ahmet", "1111")
 
@@ -32,7 +32,7 @@ class AnasayfaFragment : Fragment() {
             //Navigation.findNavController(it).navigate(R.id.kisiDEtayGecis)
 
             Navigation.findNavController(it).navigate(gecis)
-        }
+        }*/
 
         return binding.root
     }
