@@ -6,13 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.firstapp.kisileruygulamasi.R
-class KisiDetayFragment : Fragment() {
+import com.firstapp.kisileruygulamasi.databinding.FragmentKisiDetayBinding
 
+class KisiDetayFragment : Fragment() {
+    private lateinit var binding: FragmentKisiDetayBinding
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_kisi_detay, container, false)
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
+        binding = FragmentKisiDetayBinding.inflate(inflater, container, false)
+        return binding.root
     }
 }
