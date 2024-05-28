@@ -24,7 +24,14 @@ class KisilerAdapter(var mContext: Context, var kisilerListesi:List<Kisiler>)
     }
 
     override fun onBindViewHolder(holder: CardTasarimTutucu, position: Int) {
-        TODO("Not yet implemented")
+        //holder sayesinde tasarıma ve binding ile nesnelere ualşacağız.
+        val kisi = kisilerListesi.get(position) //Kisiler sınfı
+
+        val t = holder.tasarim //CardTasarimTutucu temsil eder.
+
+        //t ile artık tasarım üzerindeki nesnelere erişebiliriz.
+        t.textViewKisiAd.text = kisi.kisi_ad
+        t.textViewKisiTel.text = kisi.kisi_tel
     }
 
     override fun getItemCount(): Int {
