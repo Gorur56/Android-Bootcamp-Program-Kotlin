@@ -9,9 +9,11 @@ import android.view.ViewGroup
 import android.widget.SearchView
 import androidx.appcompat.widget.SearchView.OnQueryTextListener
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.firstapp.kisileruygulamasi.R
 import com.firstapp.kisileruygulamasi.data.entity.Kisiler
 import com.firstapp.kisileruygulamasi.databinding.FragmentAnasayfaBinding
+import com.firstapp.kisileruygulamasi.ui.adapter.KisilerAdapter
 
 class AnasayfaFragment : Fragment() {
     private lateinit var binding: FragmentAnasayfaBinding
@@ -19,6 +21,28 @@ class AnasayfaFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         binding = FragmentAnasayfaBinding.inflate(inflater,container,false)
+
+        //Aşağıdaki kod listenin itemlarının alt alta görünmesini sağlar.
+        binding.rv.layoutManager = LinearLayoutManager(requireContext())
+
+        //İtem oluşturma için arrayList oluşturuyoruz.
+        val kisilerListesi = ArrayList<Kisiler>()
+
+        //Kişiler nesne oluştur
+        val k1 = Kisiler(1, "Ahmet", "523634896")
+        val k2 = Kisiler(2,"Mehmet","1234567852")
+        val k3 = Kisiler(3,"Ayşe","5289634578")
+
+        //Nesneleri arrayliste ekle
+        kisilerListesi.add(k1)
+        kisilerListesi.add(k2)
+        kisilerListesi.add(k3)
+
+        //Adapter Nesne Oluştur
+        val kisilerAdapter = KisilerAdapter(requireContext(),kisilerListesi)
+
+        //Bu adapter 'ı recycleView 'e atıyoruz. Yoksa görüntülenme olmaz.
+        binding.rv.adapter = kisilerAdapter
 
         binding.fab.setOnClickListener{
             //fab 'a basınca kisiKayırGEcis sayfasına geçecektir.
