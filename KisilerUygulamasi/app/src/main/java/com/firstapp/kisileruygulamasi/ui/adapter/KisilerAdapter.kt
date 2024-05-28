@@ -23,7 +23,7 @@ class KisilerAdapter(var mContext: Context, var kisilerListesi:List<Kisiler>)
         return CardTasarimTutucu(binding)
     }
 
-    override fun onBindViewHolder(holder: CardTasarimTutucu, position: Int) {
+        override fun onBindViewHolder(holder: CardTasarimTutucu, position: Int) {
         //holder sayesinde tasarıma ve binding ile nesnelere ualşacağız.
         val kisi = kisilerListesi.get(position) //Kisiler sınfı
 
