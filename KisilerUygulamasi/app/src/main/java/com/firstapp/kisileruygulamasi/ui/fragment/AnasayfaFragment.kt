@@ -24,14 +24,14 @@ class AnasayfaFragment : Fragment() {
         binding = FragmentAnasayfaBinding.inflate(inflater,container,false)
 
         //Aşağıdaki kod listenin itemlarının alt alta görünmesini sağlar.
-        //binding.rv.layoutManager = LinearLayoutManager(requireContext())
+        binding.rv.layoutManager = LinearLayoutManager(requireContext())
 
         //Bir sutünda birden fazla görünmesini istiyorsak;
         //VERTICAL: dikeyde scroll edeceğimiz anlamına geliyor.
         //binding.rv.layoutManager = StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
 
         //Veya yandan kaydırmak istersek
-        binding.rv.layoutManager = StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.HORIZONTAL)
+        //binding.rv.layoutManager = StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.HORIZONTAL)
 
         //İtem oluşturma için arrayList oluşturuyoruz.
         val kisilerListesi = ArrayList<Kisiler>()

@@ -2,11 +2,15 @@ package com.firstapp.kisileruygulamasi.ui.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.firstapp.kisileruygulamasi.data.entity.Kisiler
 import com.firstapp.kisileruygulamasi.databinding.CardTasarimBinding
 import com.firstapp.kisileruygulamasi.databinding.FragmentAnasayfaBinding
+import com.firstapp.kisileruygulamasi.ui.fragment.AnasayfaFragment
+import com.firstapp.kisileruygulamasi.ui.fragment.AnasayfaFragmentDirections
 
 class KisilerAdapter(var mContext: Context, var kisilerListesi:List<Kisiler>)
     : RecyclerView.Adapter<KisilerAdapter.CardTasarimTutucu>(){
@@ -32,6 +36,11 @@ class KisilerAdapter(var mContext: Context, var kisilerListesi:List<Kisiler>)
         //t ile artık tasarım üzerindeki nesnelere erişebiliriz.
         t.textViewKisiAd.text = kisi.kisi_ad
         t.textViewKisiTel.text = kisi.kisi_tel
+
+        t.cardViewSatir.setOnClickListener {
+            val gecis = AnasayfaFragmentDirections.kisiDEtayGecis( kisi = kisi)
+            Navigation.findNavController(it).navigate(gecis)
+        }
     }
 
     override fun getItemCount(): Int {
