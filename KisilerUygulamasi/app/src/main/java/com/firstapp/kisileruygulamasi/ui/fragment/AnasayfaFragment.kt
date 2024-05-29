@@ -23,6 +23,8 @@ class AnasayfaFragment : Fragment() {
 
         binding = FragmentAnasayfaBinding.inflate(inflater,container,false)
 
+        binding.toolbarAnasayfa.title = "KİŞİLER"
+
         //Aşağıdaki kod listenin itemlarının alt alta görünmesini sağlar.
         binding.rv.layoutManager = LinearLayoutManager(requireContext())
 
