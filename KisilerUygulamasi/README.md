@@ -21,5 +21,5 @@
 
 * Cancel ikonunu basınca Snackbar çıkar ve silinsin mi diye sorar.
 
-  ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/d1e63cc2-f25c-4f95-a84d-114b55b23481)
+![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/d201504b-6eec-4efe-9e31-5205326f1fd8)
 
