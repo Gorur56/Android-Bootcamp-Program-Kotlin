@@ -23,6 +23,11 @@ class FilmlerAdapter( var mContext:Context, var filmlerListesi:List<Filmler>)
         //holder: Görsel nesnelere erişimimizi sağlar.
         val film = filmlerListesi.get(position)
         val t = holder.tasarim
+
+        t.imageViewFilm.setImageResource(
+            mContext.resources.getIdentifier(film.resim,"drawable",mContext.packageName))
+
+        t.textViewFiyat.text = "${film.fiyat} $"
     }
 
     override fun getItemCount(): Int {
