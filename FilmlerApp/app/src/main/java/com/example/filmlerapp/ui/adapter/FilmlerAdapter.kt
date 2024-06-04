@@ -20,7 +20,9 @@ class FilmlerAdapter( var mContext:Context, var filmlerListesi:List<Filmler>)
     }
 
     override fun onBindViewHolder(holder: CardTasarimTutucu, position: Int) {
-        TODO("Not yet implemented")
+        //holder: Görsel nesnelere erişimimizi sağlar.
+        val film = filmlerListesi.get(position)
+        val t = holder.tasarim
     }
 
     override fun getItemCount(): Int {
