@@ -3,10 +3,12 @@ package com.example.filmlerapp.ui.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.filmlerapp.data.entity.Filmler
 import com.example.filmlerapp.databinding.CardTasarimBinding
 import com.example.filmlerapp.databinding.FragmentAnasayfaBinding
+import com.example.filmlerapp.ui.fragment.AnasayfaFragmentDirections
 import com.google.android.material.snackbar.Snackbar
 
 class FilmlerAdapter( var mContext:Context, var filmlerListesi:List<Filmler>)
@@ -32,6 +34,9 @@ class FilmlerAdapter( var mContext:Context, var filmlerListesi:List<Filmler>)
 
         t.CardViewFilm.setOnClickListener {
             //Kartı tıklamak için
+            //Veri gönderen Direction alan sınıf Args
+            val gecis = AnasayfaFragmentDirections.detayGecis(film = film)
+            Navigation.findNavController(it).navigate(gecis)
         }
 
         t.buttonSepet.setOnClickListener {
