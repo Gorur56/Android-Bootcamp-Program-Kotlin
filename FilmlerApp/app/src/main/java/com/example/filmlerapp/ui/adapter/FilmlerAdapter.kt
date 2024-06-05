@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.filmlerapp.data.entity.Filmler
 import com.example.filmlerapp.databinding.CardTasarimBinding
 import com.example.filmlerapp.databinding.FragmentAnasayfaBinding
+import com.google.android.material.snackbar.Snackbar
 
 class FilmlerAdapter( var mContext:Context, var filmlerListesi:List<Filmler>)
     : RecyclerView.Adapter<FilmlerAdapter.CardTasarimTutucu>(){
@@ -28,6 +29,14 @@ class FilmlerAdapter( var mContext:Context, var filmlerListesi:List<Filmler>)
             mContext.resources.getIdentifier(film.resim,"drawable",mContext.packageName))
 
         t.textViewFiyat.text = "${film.fiyat} $"
+
+        t.CardViewFilm.setOnClickListener {
+            //Kartı tıklamak için
+        }
+
+        t.buttonSepet.setOnClickListener {
+            Snackbar.make(it,"${film.ad} sepete eklendi",Snackbar.LENGTH_SHORT).show()
+        }
     }
 
     override fun getItemCount(): Int {
