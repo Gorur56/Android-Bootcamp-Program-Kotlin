@@ -34,5 +34,16 @@ class MainActivity : AppCompatActivity() {
 
             binding.textVieSonuc.text = toplam.toString()
         }
+
+        binding.buttonCarpma.setOnClickListener {
+            val alinanSayi1 = binding.editTextTextSayi1.text.toString()
+            val alinanSayi2 = binding.editTextTextSAyi2.text.toString()
+
+            val sayi1 = alinanSayi1.toInt()
+            val sayi2 = alinanSayi2.toInt()
+
+            val carpma = sayi1 * sayi2
+            binding.textVieSonuc.text = carpma.toString()
+        }
     }
 }
