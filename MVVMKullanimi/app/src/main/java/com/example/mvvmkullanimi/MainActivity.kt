@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
         //DataBinding => Görsel tasarım kodlarını daha çok layout dosyasına aktarır
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
-
+        binding.mainActivityNesnesi = this
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -53,9 +53,9 @@ class MainActivity : AppCompatActivity() {
         }*/
     }
 
-    fun buttonToplamaTikla(){
-        val alinanSayi1 = binding.editTextTextSayi1.text.toString()
-        val alinanSayi2 = binding.editTextTextSAyi2.text.toString()
+    fun buttonToplamaTikla(alinanSayi1:String, alinanSayi2: String){
+        //val alinanSayi1 = binding.editTextTextSayi1.text.toString() //Gerek yok tasarıma yaptıracağız
+        //val alinanSayi2 = binding.editTextTextSAyi2.text.toString()
 
         val sayi1 = alinanSayi1.toInt()
         val sayi2 = alinanSayi2.toInt()
@@ -65,9 +65,9 @@ class MainActivity : AppCompatActivity() {
         binding.textVieSonuc.text = toplam.toString()
     }
 
-    fun buttonCarpmaTikla(){
-        val alinanSayi1 = binding.editTextTextSayi1.text.toString()
-        val alinanSayi2 = binding.editTextTextSAyi2.text.toString()
+    fun buttonCarpmaTikla(alinanSayi1:String, alinanSayi2: String){
+        //val alinanSayi1 = binding.editTextTextSayi1.text.toString()
+        //val alinanSayi2 = binding.editTextTextSAyi2.text.toString()
 
         val sayi1 = alinanSayi1.toInt()
         val sayi2 = alinanSayi2.toInt()

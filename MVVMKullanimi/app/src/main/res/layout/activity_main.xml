@@ -42,7 +42,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textVieSonuc" />
 
         <EditText
-            android:id="@+id/editTextTextSAyi2"
+            android:id="@+id/editTextTextSayi2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -60,11 +60,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="Toplama"
-            android:onClick="@{() -> mainActivityNesnesi.buttonToplamaTikla()}"
+            android:onClick="@{() -> mainActivityNesnesi.buttonToplamaTikla(editTextTextSayi1.getText().toString(), editTextTextSayi2.getText().toString())}"
             app:layout_constraintEnd_toStartOf="@+id/buttonCarpma"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextSAyi2" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextSayi2" />
 
         <Button
             android:id="@+id/buttonCarpma"
@@ -72,10 +72,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="Çarpma"
-            android:onClick="@{()-> mainActivityNesnesi.buttonCarpmaTikla()}"
+            android:onClick="@{()-> mainActivityNesnesi.buttonCarpmaTikla(editTextTextSayi1.getText().toString(), editTextTextSayi2.getText().toString())}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/buttonTopla"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextSAyi2" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextSayi2" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
