@@ -7,6 +7,10 @@
         <variable
             name="mainActivityNesnesi"
             type="com.example.mvvmkullanimi.MainActivity" />
+        
+        <variable
+            name="hesaplamaSonucu"
+            type="String" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="TextView"
+            android:text="@{hesaplamaSonucu}"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"

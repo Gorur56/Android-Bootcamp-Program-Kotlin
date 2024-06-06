@@ -26,8 +26,9 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        //Diğer kısınlar ViewBinding ile aynıdır.
-        binding.textVieSonuc.text = "0"
+        //Diğer kısımlar ViewBinding ile aynıdır. Sonucu Layour 'da aktarıyoruz.
+        //binding.textVieSonuc.text = "0"
+        binding.hesaplamaSonucu = "0"
 
         /*binding.buttonTopla.setOnClickListener {
             val alinanSayi1 = binding.editTextTextSayi1.text.toString()
@@ -62,7 +63,8 @@ class MainActivity : AppCompatActivity() {
 
         val toplam = sayi1 + sayi2
 
-        binding.textVieSonuc.text = toplam.toString()
+        //binding.textVieSonuc.text = toplam.toString() //Layout sayfasına ekledik.
+        binding.hesaplamaSonucu = toplam.toString()
     }
 
     fun buttonCarpmaTikla(alinanSayi1:String, alinanSayi2: String){
@@ -73,6 +75,7 @@ class MainActivity : AppCompatActivity() {
         val sayi2 = alinanSayi2.toInt()
 
         val carpma = sayi1 * sayi2
-        binding.textVieSonuc.text = carpma.toString()
+        //binding.textVieSonuc.text = carpma.toString()
+        binding.hesaplamaSonucu = carpma.toString()
     }
 }
