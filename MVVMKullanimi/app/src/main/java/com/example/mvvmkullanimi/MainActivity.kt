@@ -3,6 +3,7 @@ package com.example.mvvmkullanimi
 import android.os.Bundle
 import android.view.inputmethod.InputBinding
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -11,6 +12,7 @@ import com.example.mvvmkullanimi.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private val viewModel:MainActivityViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -28,7 +30,8 @@ class MainActivity : AppCompatActivity() {
 
         //Diğer kısımlar ViewBinding ile aynıdır. Sonucu Layour 'da aktarıyoruz.
         //binding.textVieSonuc.text = "0"
-        binding.hesaplamaSonucu = "0"
+        //binding.hesaplamaSonucu = "0" //ViewModel 'de değeri oku
+        binding.hesaplamaSonucu = viewModel.sonuc
 
         /*binding.buttonTopla.setOnClickListener {
             val alinanSayi1 = binding.editTextTextSayi1.text.toString()
@@ -58,24 +61,28 @@ class MainActivity : AppCompatActivity() {
         //val alinanSayi1 = binding.editTextTextSayi1.text.toString() //Gerek yok tasarıma yaptıracağız
         //val alinanSayi2 = binding.editTextTextSAyi2.text.toString()
 
-        val sayi1 = alinanSayi1.toInt()
+        /*val sayi1 = alinanSayi1.toInt()
         val sayi2 = alinanSayi2.toInt()
-
-        val toplam = sayi1 + sayi2
+        val toplam = sayi1 + sayi2*/
 
         //binding.textVieSonuc.text = toplam.toString() //Layout sayfasına ekledik.
-        binding.hesaplamaSonucu = toplam.toString()
+        viewModel.toplamaYap(alinanSayi1,alinanSayi2)
+        //binding.hesaplamaSonucu = toplam.toString()
+        binding.hesaplamaSonucu = viewModel.sonuc
     }
 
     fun buttonCarpmaTikla(alinanSayi1:String, alinanSayi2: String){
         //val alinanSayi1 = binding.editTextTextSayi1.text.toString()
         //val alinanSayi2 = binding.editTextTextSAyi2.text.toString()
 
-        val sayi1 = alinanSayi1.toInt()
+        /*val sayi1 = alinanSayi1.toInt()
         val sayi2 = alinanSayi2.toInt()
 
-        val carpma = sayi1 * sayi2
+        val carpma = sayi1 * sayi2*/
         //binding.textVieSonuc.text = carpma.toString()
-        binding.hesaplamaSonucu = carpma.toString()
+
+        viewModel.carpmaYap(alinanSayi1,alinanSayi2)
+        //binding.hesaplamaSonucu = carpma.toString()
+        binding.hesaplamaSonucu = viewModel.sonuc
     }
 }
