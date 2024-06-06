@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         //binding = ActivityMainBinding.inflate(layoutInflater)
 
-        //DataBinding
+        //DataBinding => Görsel tasarım kodlarını daha çok layout dosyasına aktarır
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
 
 
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         //Diğer kısınlar ViewBinding ile aynıdır.
         binding.textVieSonuc.text = "0"
 
-        binding.buttonTopla.setOnClickListener {
+        /*binding.buttonTopla.setOnClickListener {
             val alinanSayi1 = binding.editTextTextSayi1.text.toString()
             val alinanSayi2 = binding.editTextTextSAyi2.text.toString()
 
@@ -50,6 +50,29 @@ class MainActivity : AppCompatActivity() {
 
             val carpma = sayi1 * sayi2
             binding.textVieSonuc.text = carpma.toString()
-        }
+        }*/
+    }
+
+    fun buttonToplamaTikla(){
+        val alinanSayi1 = binding.editTextTextSayi1.text.toString()
+        val alinanSayi2 = binding.editTextTextSAyi2.text.toString()
+
+        val sayi1 = alinanSayi1.toInt()
+        val sayi2 = alinanSayi2.toInt()
+
+        val toplam = sayi1 + sayi2
+
+        binding.textVieSonuc.text = toplam.toString()
+    }
+
+    fun buttonCarpmaTikla(){
+        val alinanSayi1 = binding.editTextTextSayi1.text.toString()
+        val alinanSayi2 = binding.editTextTextSAyi2.text.toString()
+
+        val sayi1 = alinanSayi1.toInt()
+        val sayi2 = alinanSayi2.toInt()
+
+        val carpma = sayi1 * sayi2
+        binding.textVieSonuc.text = carpma.toString()
     }
 }
