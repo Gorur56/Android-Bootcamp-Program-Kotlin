@@ -31,7 +31,14 @@ class MainActivity : AppCompatActivity() {
         //Diğer kısımlar ViewBinding ile aynıdır. Sonucu Layour 'da aktarıyoruz.
         //binding.textVieSonuc.text = "0"
         //binding.hesaplamaSonucu = "0" //ViewModel 'de değeri oku
-        binding.hesaplamaSonucu = viewModel.sonuc
+
+        //Bu kodu 3 defa çalıştırmayı engellemek için LIVEDATA kullanıyoruz.
+        //Değeri gözlemliyoruz.
+        viewModel.sonuc.observe(this){
+            binding.hesaplamaSonucu = it
+        }
+        //Aşağıdaki satıra artık gerek yok
+        //binding.hesaplamaSonucu = viewModel.sonuc
 
         /*binding.buttonTopla.setOnClickListener {
             val alinanSayi1 = binding.editTextTextSayi1.text.toString()
@@ -68,7 +75,7 @@ class MainActivity : AppCompatActivity() {
         //binding.textVieSonuc.text = toplam.toString() //Layout sayfasına ekledik.
         viewModel.toplamaYap(alinanSayi1,alinanSayi2)
         //binding.hesaplamaSonucu = toplam.toString()
-        binding.hesaplamaSonucu = viewModel.sonuc
+        //binding.hesaplamaSonucu = viewModel.sonuc
     }
 
     fun buttonCarpmaTikla(alinanSayi1:String, alinanSayi2: String){
@@ -83,6 +90,6 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.carpmaYap(alinanSayi1,alinanSayi2)
         //binding.hesaplamaSonucu = carpma.toString()
-        binding.hesaplamaSonucu = viewModel.sonuc
+        //binding.hesaplamaSonucu = viewModel.sonuc
     }
 }
