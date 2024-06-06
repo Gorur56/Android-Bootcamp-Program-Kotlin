@@ -11,6 +11,7 @@
         <variable
             name="hesaplamaSonucu"
             type="String" />
+        <import type="android.view.View"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -26,6 +27,7 @@
             android:layout_marginTop="32dp"
             android:text="@{hesaplamaSonucu}"
             android:textColor="@{Integer.parseInt(hesaplamaSonucu) > 10 ? @color/kirmizi : @color/mavi}"
+            android:visibility="@{Integer.parseInt(hesaplamaSonucu)> 0 ? View.VISIBLE : View.INVISIBLE}"
             android:textSize="34sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
