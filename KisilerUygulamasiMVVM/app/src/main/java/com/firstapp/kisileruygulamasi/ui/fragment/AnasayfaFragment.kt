@@ -18,8 +18,7 @@ import com.firstapp.kisileruygulamasi.ui.adapter.KisilerAdapter
 
 class AnasayfaFragment : Fragment() {
     private lateinit var binding: FragmentAnasayfaBinding
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         binding = FragmentAnasayfaBinding.inflate(inflater,container,false)
 
@@ -54,11 +53,6 @@ class AnasayfaFragment : Fragment() {
         //Bu adapter 'ı recycleView 'e atıyoruz. Yoksa görüntülenme olmaz.
         binding.rv.adapter = kisilerAdapter
 
-        binding.fab.setOnClickListener{
-            //fab 'a basınca kisiKayırGEcis sayfasına geçecektir.
-            Navigation.findNavController(it).navigate(R.id.kisiKayitGecis) // it == binding.fab
-        }
-
         /*binding.detay.setOnClickListener {
             //Geçici veri göndererek geçiş yapmak
             val kisi = Kisiler(1, "Ahmet", "1111")
@@ -87,6 +81,9 @@ class AnasayfaFragment : Fragment() {
         })
 
         return binding.root
+    }
+    fun fabTikla(it:View){
+        Navigation.findNavController(it).navigate(R.id.kisiKayitGecis)
     }
 
     fun ara(arananKelime:String)
