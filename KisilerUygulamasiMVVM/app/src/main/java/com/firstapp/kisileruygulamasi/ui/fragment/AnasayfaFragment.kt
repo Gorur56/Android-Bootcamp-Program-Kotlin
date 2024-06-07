@@ -39,13 +39,13 @@ class AnasayfaFragment : Fragment() {
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextChange(newText: String): Boolean {
                 //Harf girdikçe veya sildikçe arama yapar
-                ara(newText)
+                viewmodel.ara(newText)
                 return true
             }
 
             override fun onQueryTextSubmit(query: String): Boolean {
                 //Arama ikonuna basınca bize sonuç getirir.
-                ara(query)
+                viewmodel.ara(query)
                 return true
             }
 
@@ -61,10 +61,5 @@ class AnasayfaFragment : Fragment() {
     }
     fun fabTikla(it:View){
         Navigation.findNavController(it).navigate(R.id.kisiKayitGecis)
-    }
-
-    fun ara(arananKelime:String)
-    {
-        Log.e("Aranan Kelime: ","$arananKelime")
     }
 }
