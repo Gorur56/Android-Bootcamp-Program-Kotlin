@@ -4,7 +4,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 class MatematikDataSource {
-    //Asenkron bir çalışma ile veri gönderiyoruz.
+    //Corourtine ile Asenkron bir çalışma ile veri gönderiyoruz.
+    // Coroutineler, suspend anahtar kelimesi ile tanımlanır ve launch, async, await gibi yapı taşları ile kullanılır.
     suspend fun toplamaYap(alinanSayi1:String, alinanSayi2: String) : String =
         withContext(Dispatchers.IO){
             //Coroutine ile veri gönderme
