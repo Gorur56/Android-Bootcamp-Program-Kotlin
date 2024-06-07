@@ -6,6 +6,6 @@
 * LiveData: Kod tekrarı engelmmek için kullanılır. Observe Pattern ile çalışır. Observe ile değer değiştiğinde diğer yerleride bildirip değiştirir.
 
 #### DATA LAYER
-* COROURTINE: Asenkron bir çalışma ile veri gönderir.
+* COROURTINE: Asenkron bir çalışma ile veri gönderir. Coroutineler, suspend anahtar kelimesi ile tanımlanır ve launch, async, await gibi yapı taşları ile kullanılır.
 * REPOSTORY:
 * DATA SOURCES:   
