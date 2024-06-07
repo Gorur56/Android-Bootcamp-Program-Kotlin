@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
 import androidx.appcompat.widget.SearchView.OnQueryTextListener
+import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -20,19 +21,9 @@ class AnasayfaFragment : Fragment() {
     private lateinit var binding: FragmentAnasayfaBinding
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        binding = FragmentAnasayfaBinding.inflate(inflater,container,false)
-
-        binding.toolbarAnasayfa.title = "KİŞİLER"
-
-        //Aşağıdaki kod listenin itemlarının alt alta görünmesini sağlar.
-        binding.rv.layoutManager = LinearLayoutManager(requireContext())
-
-        //Bir sutünda birden fazla görünmesini istiyorsak;
-        //VERTICAL: dikeyde scroll edeceğimiz anlamına geliyor.
-        //binding.rv.layoutManager = StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
-
-        //Veya yandan kaydırmak istersek
-        //binding.rv.layoutManager = StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.HORIZONTAL)
+        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_anasayfa,container,false)
+        binding.anaSayfaFragment = this
+        binding.anasayfaToolbarBaslik = "KİŞİLER"
 
         //İtem oluşturma için arrayList oluşturuyoruz.
         val kisilerListesi = ArrayList<Kisiler>()
@@ -48,22 +39,9 @@ class AnasayfaFragment : Fragment() {
         kisilerListesi.add(k3)
 
         //Adapter Nesne Oluştur
-        val kisilerAdapter = KisilerAdapter(requireContext(),kisilerListesi)
-
         //Bu adapter 'ı recycleView 'e atıyoruz. Yoksa görüntülenme olmaz.
-        binding.rv.adapter = kisilerAdapter
-
-        /*binding.detay.setOnClickListener {
-            //Geçici veri göndererek geçiş yapmak
-            val kisi = Kisiler(1, "Ahmet", "1111")
-
-            //Gönderen sınıf Directions sonuna gelir.
-            //İlk kisi fragment 'de oluşturduğumuz argument kisi nesnesidir. ikinci kisi yukarıda oluşturulan kisi nesnesidir.
-            val gecis = AnasayfaFragmentDirections.kisiDEtayGecis( kisi = kisi)
-            //Navigation.findNavController(it).navigate(R.id.kisiDEtayGecis)
-
-            Navigation.findNavController(it).navigate(gecis)
-        }*/
+        val kisilerAdapter = KisilerAdapter(requireContext(),kisilerListesi)
+        binding.kisilerAdapter = kisilerAdapter
 
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextChange(newText: String): Boolean {
