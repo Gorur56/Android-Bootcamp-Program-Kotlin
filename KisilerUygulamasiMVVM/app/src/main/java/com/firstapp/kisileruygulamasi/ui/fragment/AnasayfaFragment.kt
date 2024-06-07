@@ -28,23 +28,13 @@ class AnasayfaFragment : Fragment() {
         binding.anaSayfaFragment = this
         binding.anasayfaToolbarBaslik = "KİŞİLER"
 
-        //İtem oluşturma için arrayList oluşturuyoruz.
-        val kisilerListesi = ArrayList<Kisiler>()
+        viewmodel.kisilerListesi.observe(viewLifecycleOwner){
+            //Adapter Nesne Oluştur
+            //Bu adapter 'ı recycleView 'e atıyoruz. Yoksa görüntülenme olmaz.
+            val kisilerAdapter = KisilerAdapter(requireContext(),it, viewmodel)
+            binding.kisilerAdapter = kisilerAdapter
+        }
 
-        //Kişiler nesne oluştur
-        val k1 = Kisiler(1, "Ahmet", "523634896")
-        val k2 = Kisiler(2,"Mehmet","1234567852")
-        val k3 = Kisiler(3,"Ayşe","5289634578")
-
-        //Nesneleri arrayliste ekle
-        kisilerListesi.add(k1)
-        kisilerListesi.add(k2)
-        kisilerListesi.add(k3)
-
-        //Adapter Nesne Oluştur
-        //Bu adapter 'ı recycleView 'e atıyoruz. Yoksa görüntülenme olmaz.
-        val kisilerAdapter = KisilerAdapter(requireContext(),kisilerListesi, viewmodel)
-        binding.kisilerAdapter = kisilerAdapter
 
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextChange(newText: String): Boolean {

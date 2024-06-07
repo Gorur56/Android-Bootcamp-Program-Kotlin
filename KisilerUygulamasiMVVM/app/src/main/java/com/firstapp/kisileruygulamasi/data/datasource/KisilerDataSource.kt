@@ -1,8 +1,28 @@
 package com.firstapp.kisileruygulamasi.data.datasource
 
 import android.util.Log
+import com.firstapp.kisileruygulamasi.data.entity.Kisiler
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 class KisilerDataSource {
+    suspend fun kisiYukle() : List<Kisiler> =
+        withContext(Dispatchers.IO){
+            //İtem oluşturma için arrayList oluşturuyoruz.
+            val kisilerListesi = ArrayList<Kisiler>()
+
+            //Kişiler nesne oluştur
+            val k1 = Kisiler(1, "Ahmet", "523634896")
+            val k2 = Kisiler(2,"Mehmet","1234567852")
+            val k3 = Kisiler(3,"Ayşe","5289634578")
+
+            //Nesneleri arrayliste ekle
+            kisilerListesi.add(k1)
+            kisilerListesi.add(k2)
+            kisilerListesi.add(k3)
+
+            return@withContext kisilerListesi
+        }
     suspend fun kaydet(kisi_ad:String, kisi_tel:String)
     {
         Log.e("Kisi Kaydet","$kisi_ad - $kisi_tel")

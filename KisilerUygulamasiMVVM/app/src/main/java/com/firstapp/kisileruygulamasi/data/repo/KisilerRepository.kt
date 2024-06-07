@@ -1,6 +1,7 @@
 package com.firstapp.kisileruygulamasi.data.repo
 
 import com.firstapp.kisileruygulamasi.data.datasource.KisilerDataSource
+import com.firstapp.kisileruygulamasi.data.entity.Kisiler
 
 class KisilerRepository {
     var kds = KisilerDataSource()
@@ -9,4 +10,6 @@ class KisilerRepository {
     suspend fun guncelle(kisi_id:Int, kisi_ad: String, kisi_tel: String) = kds.guncelle(kisi_id,kisi_ad,kisi_tel)
 
     suspend fun sil(kisi_id: Int) = kds.sil(kisi_id)
+
+    suspend fun kisiYukle() : List<Kisiler> = kds.kisiYukle()
 }
