@@ -12,4 +12,9 @@ class KisilerDataSource {
     {
         Log.e("Kişi Kaydet", "$kisi_id, $kisi_ad, $kisi_tel")
     }
+
+    suspend fun sil(kisi_id: Int)
+    {
+        Log.e("Kişi Sil", "$kisi_id")
+    }
 }

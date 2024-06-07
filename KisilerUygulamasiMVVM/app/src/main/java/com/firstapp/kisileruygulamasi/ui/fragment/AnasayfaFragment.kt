@@ -43,7 +43,7 @@ class AnasayfaFragment : Fragment() {
 
         //Adapter Nesne Oluştur
         //Bu adapter 'ı recycleView 'e atıyoruz. Yoksa görüntülenme olmaz.
-        val kisilerAdapter = KisilerAdapter(requireContext(),kisilerListesi)
+        val kisilerAdapter = KisilerAdapter(requireContext(),kisilerListesi, viewmodel)
         binding.kisilerAdapter = kisilerAdapter
 
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
