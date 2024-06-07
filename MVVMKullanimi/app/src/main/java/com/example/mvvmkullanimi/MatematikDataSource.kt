@@ -22,8 +22,8 @@ class MatematikDataSource {
         withContext(Dispatchers.IO){
             val sayi1 = alinanSayi1.toString()
             val sayi2 = alinanSayi2.toString()
-            val toplam = sayi1 + sayi2
+            val carpma = sayi1 * sayi2
 
-            return@withContext toplam.toString()
+            return@withContext carpma.toString()
         }
 }
