@@ -15,6 +15,17 @@ DataSource ve Repository, yazılım geliştirmede veriye erişim ve yönetim kat
 * REPOSTORY: Repository, veri erişim katmanını daha yüksek seviyede soyutlamak için kullanılan bir desendir. Repostory 'nin ilk görevi DataSource Erişmek ve yönetmektir.
 * DATA SOURCES: DataSource, genellikle veri kaynağına doğrudan erişim sağlayan bir bileşendir.
 
+  #### OLUŞABİLECEK SENARYOLAR
+  
+  ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/6e105030-18ef-4136-a5c2-7699197dec22)
+
+  ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/d72abfdc-bc58-40af-ac6f-1a7f6cd19be8)
+
+  ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/099a5dd1-8d3f-4d88-add7-07ca8fe8462b)
+
+
+#### UYGULAMA
+
   * Toplama Ve Çarpma işlemi yapan bir uygulamadır.
   * Layout dosyasında yapılan işlemler;
       1. 0 olduğunda sonucText göstermez.
