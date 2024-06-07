@@ -7,4 +7,9 @@ class KisilerDataSource {
     {
         Log.e("Kisi Kaydet","$kisi_ad - $kisi_tel")
     }
+
+    suspend fun guncelle(kisi_id:Int, kisi_ad: String, kisi_tel: String)
+    {
+        Log.e("Kişi Kaydet", "$kisi_id, $kisi_ad, $kisi_tel")
+    }
 }
