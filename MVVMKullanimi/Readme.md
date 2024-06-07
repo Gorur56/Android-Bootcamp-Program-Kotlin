@@ -23,6 +23,7 @@ DataSource ve Repository, yazılım geliştirmede veriye erişim ve yönetim kat
   * Activity dosyasında yapılan işlemler; DataBinding, ViewModel, LiveData, Repository, DataSource
     
 
-  ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/19013152-4b20-4af4-9e83-5367b0971722) ![Uploading image.png…]()
+  ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/19013152-4b20-4af4-9e83-5367b0971722) ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/f80f0afb-0643-4215-a024-935fb0829e25)
+
 
 
