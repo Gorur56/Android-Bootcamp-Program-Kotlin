@@ -6,5 +6,6 @@
 * LiveData: Kod tekrarı engelmmek için kullanılır. Observe Pattern ile çalışır. Observe ile değer değiştiğinde diğer yerleride bildirip değiştirir.
 
 #### DATA LAYER
+* COROURTINE: Asenkron bir çalışma ile veri gönderir.
 * REPOSTORY:
 * DATA SOURCES:   
