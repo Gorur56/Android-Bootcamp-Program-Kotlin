@@ -14,3 +14,15 @@ DataSource ve Repository, yazılım geliştirmede veriye erişim ve yönetim kat
 * COROURTINE: Asenkron bir çalışma ile veri gönderir. Coroutineler, suspend anahtar kelimesi ile tanımlanır ve launch, async, await gibi yapı taşları ile kullanılır.
 * REPOSTORY: Repository, veri erişim katmanını daha yüksek seviyede soyutlamak için kullanılan bir desendir. Repostory 'nin ilk görevi DataSource Erişmek ve yönetmektir.
 * DATA SOURCES: DataSource, genellikle veri kaynağına doğrudan erişim sağlayan bir bileşendir.
+
+  * Toplama Ve Çarpma işlemi yapan bir uygulamadır.
+  * Layout dosyasında yapılan işlemler;
+      1. 0 olduğunda sonucText göstermez.
+      2. Uzunluk 1 ise textSize 50sp, 1 'den büyükse textSize 100sp olur.
+      3. !0 2dan küçükse sonucText Mavi, büyükse kırmızı olur.
+  * Activity dosyasında yapılan işlemler; DataBinding, ViewModel, LiveData, Repository, DataSource
+    
+
+  ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/19013152-4b20-4af4-9e83-5367b0971722) ![Uploading image.png…]()
+
+
