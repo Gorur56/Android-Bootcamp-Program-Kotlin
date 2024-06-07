@@ -23,17 +23,6 @@ class KisiDetayFragment : Fragment() {
         val gelenKisi = bundle.kisi
 
         binding.kisiNesnesi = gelenKisi
-
-        /*//Edittextlere gelen kişileri yazma
-        binding.editTextKisiDetayAd.setText(gelenKisi.kisi_ad)
-        binding.editTextKisiDetayTel.setText(gelenKisi.kisi_tel)
-
-        binding.buttonGuncelle.setOnClickListener {
-            val kisi_ad = binding.editTextKisiDetayAd.text.toString()
-            val kisi_tel = binding.editTextKisiDetayTel.text.toString()
-
-            buttonGuncelle(gelenKisi.kisi_id, kisi_ad,kisi_tel)
-        }*/
         return binding.root
     }
 
