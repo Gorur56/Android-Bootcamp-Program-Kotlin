@@ -34,7 +34,7 @@ class MainActivityViewModel : ViewModel() {
 
         val carpma = sayi1 * sayi2
         sonuc.value = carpma.toString()*/
-        CoroutineScope(Dispatchers).launch {
+        CoroutineScope(Dispatchers.Main).launch {
             sonuc.value = mrepo.carpmaYap(alinanSayi1,alinanSayi2)
         }
     }

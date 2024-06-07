@@ -11,8 +11,8 @@ class MatematikDataSource {
             //Coroutine ile veri gönderme
             //return edeceksek withContenxt kullanılır.
             //Dispatchers.IO: Veri tabanı ile işlem yapılacaksa kullanılır.
-            val sayi1 = alinanSayi1.toString()
-            val sayi2 = alinanSayi2.toString()
+            val sayi1 = alinanSayi1.toInt()
+            val sayi2 = alinanSayi2.toInt()
             val toplam = sayi1 + sayi2
 
             return@withContext toplam.toString()
@@ -21,8 +21,8 @@ class MatematikDataSource {
 
     suspend fun carpmaYap(alinanSayi1:String, alinanSayi2: String) : String =
         withContext(Dispatchers.IO){
-            val sayi1 = alinanSayi1.toString()
-            val sayi2 = alinanSayi2.toString()
+            val sayi1 = alinanSayi1.toInt()
+            val sayi2 = alinanSayi2.toInt()
             val carpma = sayi1 * sayi2
 
             return@withContext carpma.toString()
