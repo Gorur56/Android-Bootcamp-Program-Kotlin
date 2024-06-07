@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.viewModels
 import com.firstapp.kisileruygulamasi.R
 import com.firstapp.kisileruygulamasi.databinding.FragmentKisiDetayBinding
 import com.firstapp.kisileruygulamasi.databinding.FragmentKisiKayitBinding
@@ -27,6 +28,12 @@ class KisiKayitFragment : Fragment() {
             buttonKaydet(kisi_ad,kisi_tel)
         }
         return binding.root
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val tempViewModel:KisiKayitViewModel by viewModels()
+        viewmodel = tempViewModel
     }
 
     fun buttonKaydet(kisi_ad:String,kisi_tel:String)
