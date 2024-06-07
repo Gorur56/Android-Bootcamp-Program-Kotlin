@@ -16,9 +16,11 @@ import com.firstapp.kisileruygulamasi.R
 import com.firstapp.kisileruygulamasi.data.entity.Kisiler
 import com.firstapp.kisileruygulamasi.databinding.FragmentAnasayfaBinding
 import com.firstapp.kisileruygulamasi.ui.adapter.KisilerAdapter
+import com.firstapp.kisileruygulamasi.ui.viewmodel.AnasayfaViewModel
 
 class AnasayfaFragment : Fragment() {
     private lateinit var binding: FragmentAnasayfaBinding
+    private lateinit var viewmodel: AnasayfaViewModel
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_anasayfa,container,false)

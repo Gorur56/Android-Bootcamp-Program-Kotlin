@@ -10,9 +10,11 @@ import androidx.databinding.DataBindingUtil
 import com.firstapp.kisileruygulamasi.R
 import com.firstapp.kisileruygulamasi.databinding.FragmentKisiDetayBinding
 import com.firstapp.kisileruygulamasi.databinding.FragmentKisiKayitBinding
+import com.firstapp.kisileruygulamasi.ui.viewmodel.KisiKayitViewModel
 
 class KisiKayitFragment : Fragment() {
     private lateinit var binding: FragmentKisiKayitBinding
+    private lateinit var viewmodel: KisiKayitViewModel
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_kisi_kayit, container,false)
         binding.kisiKayitFragment = this //Bunu tanımlamazsak tanımlar boş kalır
