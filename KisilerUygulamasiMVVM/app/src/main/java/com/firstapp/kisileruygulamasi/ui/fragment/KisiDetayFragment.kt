@@ -32,12 +32,12 @@ class KisiDetayFragment : Fragment() {
             val kisi_ad = binding.editTextKisiDetayAd.text.toString()
             val kisi_tel = binding.editTextKisiDetayTel.text.toString()
 
-            guncelle(gelenKisi.kisi_id, kisi_ad,kisi_tel)
+            buttonGuncelle(gelenKisi.kisi_id, kisi_ad,kisi_tel)
         }
         return binding.root
     }
 
-    fun guncelle(kisi_id:Int, kisi_ad:String, kisi_tel:String)
+    fun buttonGuncelle(kisi_id:Int, kisi_ad:String, kisi_tel:String)
     {
         Log.e("Kişi Güncelle: ", "$kisi_id - $kisi_ad - $kisi_tel")
     }
