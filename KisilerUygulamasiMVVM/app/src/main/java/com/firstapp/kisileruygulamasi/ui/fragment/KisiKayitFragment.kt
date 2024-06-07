@@ -6,18 +6,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import com.firstapp.kisileruygulamasi.R
 import com.firstapp.kisileruygulamasi.databinding.FragmentKisiDetayBinding
 import com.firstapp.kisileruygulamasi.databinding.FragmentKisiKayitBinding
 
 class KisiKayitFragment : Fragment() {
     private lateinit var binding: FragmentKisiKayitBinding
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-
-        binding = FragmentKisiKayitBinding.inflate(inflater,container,false)
-
-        binding.toolbarKisiKayit.title = "Kişi Kayıt"
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_kisi_kayit, container,false)
+        binding.kisiKayitFragment = this //Bunu tanımlamazsak tanımlar boş kalır
+        binding.kisiKayitToolbarBaslik= "Kişi Kayıt"
 
         binding.buttonKaydet.setOnClickListener {
             val kisi_ad = binding.editTextkisiAd.text.toString()
