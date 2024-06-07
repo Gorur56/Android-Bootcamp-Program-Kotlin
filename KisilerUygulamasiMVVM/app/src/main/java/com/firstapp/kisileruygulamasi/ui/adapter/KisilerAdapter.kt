@@ -5,8 +5,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.firstapp.kisileruygulamasi.R
 import com.firstapp.kisileruygulamasi.data.entity.Kisiler
 import com.firstapp.kisileruygulamasi.databinding.CardTasarimBinding
 import com.firstapp.kisileruygulamasi.databinding.FragmentAnasayfaBinding
@@ -25,7 +27,7 @@ class KisilerAdapter(var mContext: Context, var kisilerListesi:List<Kisiler>)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardTasarimTutucu {
         //binding kurulumu
-        val binding = CardTasarimBinding.inflate(LayoutInflater.from(mContext), parent,false)
+        val binding:CardTasarimBinding = DataBindingUtil.inflate(LayoutInflater.from(mContext),R.layout.card_tasarim, parent,false)
         return CardTasarimTutucu(binding)
     }
 
@@ -35,9 +37,11 @@ class KisilerAdapter(var mContext: Context, var kisilerListesi:List<Kisiler>)
 
         val t = holder.tasarim //CardTasarimTutucu temsil eder.
 
-        //t ile artık tasarım üzerindeki nesnelere erişebiliriz.
+        /*//t ile artık tasarım üzerindeki nesnelere erişebiliriz.
         t.textViewKisiAd.text = kisi.kisi_ad
-        t.textViewKisiTel.text = kisi.kisi_tel
+        t.textViewKisiTel.text = kisi.kisi_tel*/
+
+        t.kisiNesnesi = kisi
 
         t.cardViewSatir.setOnClickListener {
             val gecis = AnasayfaFragmentDirections.kisiDEtayGecis( kisi = kisi)
