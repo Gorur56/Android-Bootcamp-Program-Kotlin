@@ -6,6 +6,8 @@
 * LiveData: Kod tekrarı engelmmek için kullanılır. Observe Pattern ile çalışır. Observe ile değer değiştiğinde diğer yerleride bildirip değiştirir.
 
 #### DATA LAYER
+DataSource ve Repository, yazılım geliştirmede veriye erişim ve yönetim katmanlarını organize etmek için kullanılan tasarım desenleridir. 
+
 * COROURTINE: Asenkron bir çalışma ile veri gönderir. Coroutineler, suspend anahtar kelimesi ile tanımlanır ve launch, async, await gibi yapı taşları ile kullanılır.
-* REPOSTORY:
-* DATA SOURCES:   
+* REPOSTORY: Repository, veri erişim katmanını daha yüksek seviyede soyutlamak için kullanılan bir desendir. Repostory 'nin ilk görevi DataSource Erişmektir.
+* DATA SOURCES: DataSource, genellikle veri kaynağına doğrudan erişim sağlayan bir bileşendir.
