@@ -18,6 +18,7 @@ import com.firstapp.kisileruygulamasi.data.entity.Kisiler
 import com.firstapp.kisileruygulamasi.databinding.FragmentAnasayfaBinding
 import com.firstapp.kisileruygulamasi.ui.adapter.KisilerAdapter
 import com.firstapp.kisileruygulamasi.ui.viewmodel.AnasayfaViewModel
+import com.firstapp.kisileruygulamasi.utils.gecisYap
 
 class AnasayfaFragment : Fragment() {
     private lateinit var binding: FragmentAnasayfaBinding
@@ -60,7 +61,8 @@ class AnasayfaFragment : Fragment() {
         viewmodel = tempViewModel
     }
     fun fabTikla(it:View){
-        Navigation.findNavController(it).navigate(R.id.kisiKayitGecis)
+        //Navigation.findNavController(it).navigate(R.id.kisiKayitGecis)
+        Navigation.gecisYap(it,R.id.kisiKayitGecis) //Extensions
     }
 
     override fun onResume() {
