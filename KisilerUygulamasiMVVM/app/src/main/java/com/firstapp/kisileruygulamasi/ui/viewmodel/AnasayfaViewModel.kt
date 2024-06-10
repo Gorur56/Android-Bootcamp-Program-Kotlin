@@ -21,6 +21,7 @@ class AnasayfaViewModel : ViewModel() {
     {
         CoroutineScope(Dispatchers.Main).launch {
             krepo.sil(kisi_id)
+            kisiYukle() //Silme işleminden sonra listeyi güncelle
         }
     }
 
