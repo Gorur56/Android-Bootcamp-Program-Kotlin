@@ -3,6 +3,8 @@ package com.example.filmlerapp.ui.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.R
+import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.filmlerapp.data.entity.Filmler
@@ -18,7 +20,8 @@ class FilmlerAdapter( var mContext:Context, var filmlerListesi:List<Filmler>)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardTasarimTutucu {
         //Burada ViewBinding yapıyoruz.
-        val binding = CardTasarimBinding.inflate(LayoutInflater.from(mContext),parent, false)
+        val binding:CardTasarimBinding = DataBindingUtil.inflate(LayoutInflater.from(mContext),
+            com.example.filmlerapp.R.layout.card_tasarim, parent, false)
         return CardTasarimTutucu(binding)
     }
 
@@ -30,7 +33,8 @@ class FilmlerAdapter( var mContext:Context, var filmlerListesi:List<Filmler>)
         t.imageViewFilm.setImageResource(
             mContext.resources.getIdentifier(film.resim,"drawable",mContext.packageName))
 
-        t.textViewFiyat.text = "${film.fiyat} $"
+        t.filmNesnesi = film
+        //t.textViewFiyat.text = "${film.fiyat} $"
 
         t.CardViewFilm.setOnClickListener {
             //Kartı tıklamak için
