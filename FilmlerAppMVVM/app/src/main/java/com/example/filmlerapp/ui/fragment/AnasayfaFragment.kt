@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import com.example.filmlerapp.R
 import com.example.filmlerapp.databinding.FragmentAnasayfaBinding
@@ -33,7 +34,7 @@ class AnasayfaFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val tempViewModel:AnasayfaViewModel by ViewModel() //Viewmodel 'i direk atayamadığımız için geçici bir değere atıyoruz.
+        val tempViewModel:AnasayfaViewModel by viewModels()//Viewmodel 'i direk atayamadığımız için geçici bir değere atıyoruz.
         viewModel = tempViewModel
     }
 }
