@@ -1,6 +1,10 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
+    id("dagger.hilt.android.plugin")
+    id("kotlinx-serialization")
 }
 
 android {
@@ -9,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.hiltkullanimi"
-        minSdk = 19
+        minSdk = 21
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -42,7 +46,18 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation("com.google.dagger:hilt-android-gradle-plugin:2.51")
+    implementation("com.google.android.material:material:1.12.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation("com.google.dagger:hilt-android:2.51")
+    kapt("com.google.dagger:hilt-compiler:2.51")
+    kapt("androidx.hilt:hilt-compiler:1.2.0")
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+    implementation("androidx.compose.material:material:1.6.7")
+}
+
+kapt {
+    correctErrorTypes = true
 }
