@@ -22,10 +22,12 @@ class AnasayfaFragment : Fragment() {
         //Aşağıdaki kodu layout 'a taşıdık
         //binding.filmRv.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
 
-        val filmlerAdapter = FilmlerAdapter(requireContext(),filmlerListesi)
+        viewModel.filmlerListesi.observe(viewLifecycleOwner){
+            val filmlerAdapter = FilmlerAdapter(requireContext(),it)
+            // binding.filmRv.adapter = filmlerAdapter layout dosyasına taşındıç
+            binding.filmlerAdapter = filmlerAdapter
+        }
 
-        // binding.filmRv.adapter = filmlerAdapter layout dosyasına taşındıç
-        binding.filmlerAdapter = filmlerAdapter
         return binding.root
     }
 
