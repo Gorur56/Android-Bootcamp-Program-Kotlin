@@ -5,5 +5,5 @@ import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp //Uygulamamızı temsil eder.
 class HiltApplication : Application() {
-    //di: dependency injection
+    //di: dependency injection Tükeci veriyi alan kısım
 }
