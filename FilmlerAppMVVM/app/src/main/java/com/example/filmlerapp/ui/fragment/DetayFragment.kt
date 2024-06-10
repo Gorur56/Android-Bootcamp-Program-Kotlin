@@ -21,6 +21,7 @@ class DetayFragment : Fragment() {
 
         //DataBinding Layout dosyasında ayarlandı.
         //binding.toolbarDetay.title = film.ad
+        binding.filmNesnesi = film
 
         binding.ivFilm.setImageResource(
             resources.getIdentifier(film.resim,"drawable",requireContext().packageName))
