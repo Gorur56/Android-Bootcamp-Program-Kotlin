@@ -62,4 +62,9 @@ class AnasayfaFragment : Fragment() {
     fun fabTikla(it:View){
         Navigation.findNavController(it).navigate(R.id.kisiKayitGecis)
     }
+
+    override fun onResume() {
+        super.onResume()
+        viewmodel.kisiYukle() //Anasayfaya döndüğümüzde bu method çalışır.
+    }
 }
