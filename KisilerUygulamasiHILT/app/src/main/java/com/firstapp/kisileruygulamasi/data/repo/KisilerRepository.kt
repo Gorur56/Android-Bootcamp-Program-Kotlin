@@ -3,7 +3,7 @@ package com.firstapp.kisileruygulamasi.data.repo
 import com.firstapp.kisileruygulamasi.data.datasource.KisilerDataSource
 import com.firstapp.kisileruygulamasi.data.entity.Kisiler
 
-class KisilerRepository {
+class KisilerRepository( var kds:KisilerDataSource) {
     var kds = KisilerDataSource()
     suspend fun  kaydet(kisi_ad:String, kisi_tel:String) = kds.kaydet(kisi_ad,kisi_tel)
 

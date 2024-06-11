@@ -4,10 +4,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.firstapp.kisileruygulamasi.data.entity.Kisiler
 import com.firstapp.kisileruygulamasi.data.repo.KisilerRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+@HiltViewModel
 class AnasayfaViewModel : ViewModel() {
     var krepo = KisilerRepository()
     var kisilerListesi = MutableLiveData<List<Kisiler>>()
