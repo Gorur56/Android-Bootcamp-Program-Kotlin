@@ -19,7 +19,9 @@ import com.firstapp.kisileruygulamasi.databinding.FragmentAnasayfaBinding
 import com.firstapp.kisileruygulamasi.ui.adapter.KisilerAdapter
 import com.firstapp.kisileruygulamasi.ui.viewmodel.AnasayfaViewModel
 import com.firstapp.kisileruygulamasi.utils.gecisYap
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AnasayfaFragment : Fragment() {
     private lateinit var binding: FragmentAnasayfaBinding
     private lateinit var viewmodel: AnasayfaViewModel

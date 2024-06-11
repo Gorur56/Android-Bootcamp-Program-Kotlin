@@ -5,6 +5,7 @@ plugins {
     id("com.google.dagger.hilt.android")
     id("dagger.hilt.android.plugin")
     id("kotlinx-serialization")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -44,6 +45,7 @@ android {
     }
 }
 
+
 dependencies {
 
     implementation(libs.androidx.core.ktx)
@@ -55,6 +57,8 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
     implementation("com.google.dagger:hilt-android-gradle-plugin:2.51")
     implementation("com.google.android.material:material:1.12.0")
+    implementation ("androidx.navigation:navigation-fragment-ktx:2.6.0")
+    implementation ("androidx.navigation:navigation-ui-ktx:2.6.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

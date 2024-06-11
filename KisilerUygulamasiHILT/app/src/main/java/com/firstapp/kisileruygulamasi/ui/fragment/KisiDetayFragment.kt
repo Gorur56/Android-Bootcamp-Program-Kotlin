@@ -13,7 +13,9 @@ import androidx.navigation.fragment.navArgs
 import com.firstapp.kisileruygulamasi.R
 import com.firstapp.kisileruygulamasi.databinding.FragmentKisiDetayBinding
 import com.firstapp.kisileruygulamasi.ui.viewmodel.KisiDetayViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class KisiDetayFragment : Fragment() {
     private lateinit var binding: FragmentKisiDetayBinding
     private lateinit var viewmodel: KisiDetayViewModel
