@@ -4,7 +4,7 @@ import com.example.filmlerapp.data.datasource.FilmlerDataSource
 import com.example.filmlerapp.data.entity.Filmler
 import dagger.hilt.android.lifecycle.HiltViewModel
 
-class FilmlerRepository(fds:FilmlerDataSource){
+class FilmlerRepository(var fds:FilmlerDataSource){
     //var fds = FilmlerDataSource()
     suspend fun filmleriYukle() : List<Filmler> = fds.filmleriYukle()
 }

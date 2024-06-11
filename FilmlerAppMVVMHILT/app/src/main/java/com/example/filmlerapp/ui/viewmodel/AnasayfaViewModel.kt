@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class AnasayfaViewModel @Inject constructor(frepo:FilmlerRepository) : ViewModel() {
+class AnasayfaViewModel @Inject constructor(var frepo:FilmlerRepository) : ViewModel() {
     //var frepo = FilmlerRepository()
 
     //Veri aldığımız için LiveData kullanmamız gerekiyor.
