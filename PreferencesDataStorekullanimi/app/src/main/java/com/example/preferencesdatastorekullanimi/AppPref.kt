@@ -22,6 +22,7 @@ class AppPref(var context:Context) {
         val BOY_KEY = doublePreferencesKey("BOY")
         val BEKAR_KEY = booleanPreferencesKey("BEKAR")
         val ARKADAS_LISTE_KEY = stringSetPreferencesKey("ARKADAS_LISTE")
+        val SAYAC_KEY = intPreferencesKey("SAYAC")
     }
     //Coroutine yapı ile çalışır.
     suspend fun kayitAd(ad:String){
@@ -77,5 +78,16 @@ class AppPref(var context:Context) {
     suspend fun okuArkadasListe() : Set<String>?{
         val p = context.ds.data.first()
         return p[ARKADAS_LISTE_KEY]
+    }
+
+    suspend fun kayitSayac(sayac:Int){
+        context.ds.edit {
+            it[SAYAC_KEY] = sayac
+        }
+    }
+
+    suspend fun okuSayac(): Int{
+        val p = context.ds.data.first()
+        return p[SAYAC_KEY] ?: 0
     }
 }
