@@ -31,7 +31,7 @@
 
 ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/f98fc7bf-a9ed-4805-bedf-a49d1663148c)
 
-#### HILT Module Oluşturm
+#### HILT Module Oluşturma
 
 ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/aea78582-1bc3-47a3-8269-2769063c0176)
 
