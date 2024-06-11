@@ -71,6 +71,12 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
+            var gelenSayac = ap.okuSayac()
+
+            ap.kayitSayac(++gelenSayac)
+
+            binding.textViewSayac.text = "Açılış Sayısı $gelenSayac"
+
         }
     }
 }
