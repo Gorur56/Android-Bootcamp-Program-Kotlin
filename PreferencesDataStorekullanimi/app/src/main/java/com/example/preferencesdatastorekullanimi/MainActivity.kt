@@ -33,8 +33,41 @@ class MainActivity : AppCompatActivity() {
             ap.silAd()
 
             //okuma İşlemleri
+            val gelenAdd = ap.okuAd()
+            Log.e("Gelen Ad",gelenAdd) //İsim yok
+
+            //Kayıt işlemi
+            ap.kayitAd("Mehmet")
+            ap.kayitYas(20)
+            ap.kayitBoy(1.80)
+            ap.kayitBekar(true)
+
+            val liste = HashSet<String>()
+            liste.add("Ali")
+            liste.add("Ece")
+            ap.kayitArkadasListe(liste)
+
+            //Okuma İşlemi
             val gelenAd = ap.okuAd()
-            Log.e("Gelen Ad",gelenAd) //İsim yok
+            val gelenYas = ap.okuYas()
+            val gelenBoy = ap.okuBoy()
+            val gelenBekar = ap.okuBekar()
+
+            Log.e("Gelen Ad",gelenAd)
+            Log.e("Gelen Yas",gelenYas.toString())
+            Log.e("Gelen Boy",gelenBoy.toString())
+            Log.e("Gelen Bekar durum",gelenBekar.toString())
+
+            val gelenListe = ap.okuArkadasListe()
+
+            if(gelenListe != null)
+            {
+                for (a in gelenListe)
+                {
+                    Log.e("Gelen Liste",a)
+                }
+            }
+
         }
     }
 }
