@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class AnasayfaViewModel @Inject constructor(krepo:KisilerRepository) : ViewModel() {
+class AnasayfaViewModel @Inject constructor(var krepo:KisilerRepository) : ViewModel() {
     //var krepo = KisilerRepository()
     var kisilerListesi = MutableLiveData<List<Kisiler>>()
 

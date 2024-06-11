@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class KisiDetayViewModel @Inject constructor(krepo:KisilerRepository): ViewModel() {
+class KisiDetayViewModel @Inject constructor(var krepo:KisilerRepository): ViewModel() {
     //var krepo = KisilerRepository()
     fun kaydet(kisi_id:Int, kisi_ad:String, kisi_tel:String)
     {

@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class KisiKayitViewModel @Inject constructor(krepo:KisilerRepository): ViewModel() {
+class KisiKayitViewModel @Inject constructor(var krepo:KisilerRepository): ViewModel() {
     //var krepo = KisilerRepository()
     fun kaydet(kisi_ad:String, kisi_tel:String){
         //Eğer suspend hatası almak istemiyorsak en son asenkron kullanacğaımız fonksiyonda Coroutine kullanmamız gerekiyor.
