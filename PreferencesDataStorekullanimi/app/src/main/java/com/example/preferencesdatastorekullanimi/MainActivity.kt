@@ -28,9 +28,13 @@ class MainActivity : AppCompatActivity() {
             //Kayıt işlemleri
             ap.kayitAd("Ahmet")
 
+            //Yukarıdaki satırın bir defa çalışması yeterli ahmet ismini hatırlayacaktır.
+            //Bu şekilde silebilirsiz. Veya Uygulamayı silersekte silinir.
+            ap.silAd()
+
             //okuma İşlemleri
             val gelenAd = ap.okuAd()
-            Log.e("Gelen Ad",gelenAd)
+            Log.e("Gelen Ad",gelenAd) //İsim yok
         }
     }
 }
