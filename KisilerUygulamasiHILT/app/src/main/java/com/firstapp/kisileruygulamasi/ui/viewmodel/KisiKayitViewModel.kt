@@ -6,10 +6,11 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @HiltViewModel
-class KisiKayitViewModel : ViewModel() {
-    var krepo = KisilerRepository()
+class KisiKayitViewModel @Inject constructor(krepo:KisilerRepository): ViewModel() {
+    //var krepo = KisilerRepository()
     fun kaydet(kisi_ad:String, kisi_tel:String){
         //Eğer suspend hatası almak istemiyorsak en son asenkron kullanacğaımız fonksiyonda Coroutine kullanmamız gerekiyor.
         //Burada da suspen yapsakdık burayı çağıran yerde suspend hatası verir.
