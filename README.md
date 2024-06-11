@@ -40,6 +40,11 @@
 
 ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/3be4a34d-b991-47c4-b6c0-31b88178ea87)
 
+# DEPOLAMA İŞLEMLERİ
+
+![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/2b63000e-3e25-428f-a15d-9ccf383b20f4)
+
+
 
 
 
