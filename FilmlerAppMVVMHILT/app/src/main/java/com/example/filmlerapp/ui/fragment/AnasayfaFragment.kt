@@ -12,7 +12,9 @@ import com.example.filmlerapp.R
 import com.example.filmlerapp.databinding.FragmentAnasayfaBinding
 import com.example.filmlerapp.ui.adapter.FilmlerAdapter
 import com.example.filmlerapp.ui.viewmodel.AnasayfaViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AnasayfaFragment : Fragment() {
     private lateinit var binding: FragmentAnasayfaBinding
     private lateinit var viewModel: AnasayfaViewModel
