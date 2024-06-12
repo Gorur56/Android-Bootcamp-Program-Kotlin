@@ -18,8 +18,7 @@ import javax.inject.Singleton
 class AppModule {
     @Provides
     @Singleton
-    fun provideFilmlerDataSource(fdao:FilmlerDao) : FilmlerDataSource
-    {
+    fun provideFilmlerDataSource(fdao:FilmlerDao) : FilmlerDataSource {
         return FilmlerDataSource(fdao)
     }
 

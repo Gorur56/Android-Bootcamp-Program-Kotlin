@@ -5,8 +5,8 @@ import com.example.filmlerapp.room.FilmlerDao
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class FilmlerDataSource {
-    suspend fun filmleriYukle(fdao:FilmlerDao) : List<Filmler> =
+class FilmlerDataSource(var fdao:FilmlerDao) {
+    suspend fun filmleriYukle() : List<Filmler> =
         withContext(Dispatchers.IO){
             /*Verileri Database 'den alacağız.
             val filmlerListesi = ArrayList<Filmler>()
