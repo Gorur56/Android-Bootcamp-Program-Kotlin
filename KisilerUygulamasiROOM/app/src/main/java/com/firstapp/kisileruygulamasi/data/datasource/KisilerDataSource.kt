@@ -6,7 +6,7 @@ import com.firstapp.kisileruygulamasi.room.KisilerDao
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class KisilerDataSource( var kdo:KisilerDao) {
+class KisilerDataSource(val kdao:KisilerDao) {
     suspend fun kisiYukle() : List<Kisiler> =
         withContext(Dispatchers.IO){
             /*Artık veritabanından değerleri çekiyoruz
@@ -23,7 +23,7 @@ class KisilerDataSource( var kdo:KisilerDao) {
             kisilerListesi.add(k2)
             kisilerListesi.add(k3)*/
 
-            return@withContext kdo.kisileriYukle()
+            return@withContext kdao.kisileriYukle()
         }
 
     suspend fun ara(aramaKelimesi:String) : List<Kisiler> =
@@ -37,16 +37,30 @@ class KisilerDataSource( var kdo:KisilerDao) {
         }
     suspend fun kaydet(kisi_ad:String, kisi_tel:String)
     {
+
         Log.e("Kisi Kaydet","$kisi_ad - $kisi_tel")
+
+        //İnterface ile kayıt
+        //id otomatik olduğu için 0 giriyoruz.
+        val yeniKisi = Kisiler(0,kisi_ad, kisi_tel)
+        kdao.kaydet(yeniKisi)
     }
 
     suspend fun guncelle(kisi_id:Int, kisi_ad: String, kisi_tel: String)
     {
         Log.e("Kişi Kaydet", "$kisi_id, $kisi_ad, $kisi_tel")
+
+        //İnterface ile update
+        val guncellenenKisi = Kisiler(kisi_id,kisi_ad,kisi_tel)
+        kdao.guncelle(guncellenenKisi)
     }
 
     suspend fun sil(kisi_id: Int)
     {
         Log.e("Kişi Sil", "$kisi_id")
+
+        //İnterface ile sil
+        val silinenKisi = Kisiler(kisi_id,"", "")
+        kdao.sil(silinenKisi)
     }
 }
