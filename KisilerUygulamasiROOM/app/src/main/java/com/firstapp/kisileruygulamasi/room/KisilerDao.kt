@@ -23,4 +23,8 @@ interface KisilerDao {
 
     @Delete
     suspend fun sil(kisi: Kisiler)
+
+    //|| :aramaKelimesi ||: Aşağıdaki parametryi sorgumuza bu şekilde aktarıyoruz.
+    @Query("SELECT * FROM  kisiler WHERE kisi_ad like '%'|| :aramaKelimesi ||'%'")
+    suspend fun ara(aramaKelimesi:String) : List<Kisiler>
 }

@@ -28,12 +28,12 @@ class KisilerDataSource(val kdao:KisilerDao) {
 
     suspend fun ara(aramaKelimesi:String) : List<Kisiler> =
         withContext(Dispatchers.IO) {
-            val kisilerlistesi = ArrayList<Kisiler>()
+            /*val kisilerlistesi = ArrayList<Kisiler>()
 
             val k1 = Kisiler(1, "Ahmet", "523634896")
-            kisilerlistesi.add(k1)
+            kisilerlistesi.add(k1)*/
 
-            return@withContext kisilerlistesi
+            return@withContext kdao.ara(aramaKelimesi)
         }
     suspend fun kaydet(kisi_ad:String, kisi_tel:String)
     {
