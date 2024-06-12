@@ -2,12 +2,14 @@ package com.firstapp.kisileruygulamasi.data.datasource
 
 import android.util.Log
 import com.firstapp.kisileruygulamasi.data.entity.Kisiler
+import com.firstapp.kisileruygulamasi.room.KisilerDao
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class KisilerDataSource {
+class KisilerDataSource( var kdo:KisilerDao) {
     suspend fun kisiYukle() : List<Kisiler> =
         withContext(Dispatchers.IO){
+            /*Artık veritabanından değerleri çekiyoruz
             //İtem oluşturma için arrayList oluşturuyoruz.
             val kisilerListesi = ArrayList<Kisiler>()
 
@@ -19,9 +21,9 @@ class KisilerDataSource {
             //Nesneleri arrayliste ekle
             kisilerListesi.add(k1)
             kisilerListesi.add(k2)
-            kisilerListesi.add(k3)
+            kisilerListesi.add(k3)*/
 
-            return@withContext kisilerListesi
+            return@withContext kdo.kisileriYukle()
         }
 
     suspend fun ara(aramaKelimesi:String) : List<Kisiler> =
