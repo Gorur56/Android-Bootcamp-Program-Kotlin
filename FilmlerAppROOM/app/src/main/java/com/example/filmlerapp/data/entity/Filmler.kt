@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 import org.jetbrains.annotations.NotNull
 import java.io.Serializable
 
-@Entity
+@Entity(tableName = "filmler")
 data class Filmler(@PrimaryKey(autoGenerate = true)
                    @ColumnInfo(name = "id") @NotNull var id:Int,
                    @ColumnInfo(name = "ad") @NotNull var ad:String,

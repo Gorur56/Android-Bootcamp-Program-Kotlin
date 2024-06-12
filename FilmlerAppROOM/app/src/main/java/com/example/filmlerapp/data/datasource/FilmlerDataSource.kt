@@ -1,12 +1,14 @@
 package com.example.filmlerapp.data.datasource
 
 import com.example.filmlerapp.data.entity.Filmler
+import com.example.filmlerapp.room.FilmlerDao
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 class FilmlerDataSource {
-    suspend fun filmleriYukle() : List<Filmler> =
+    suspend fun filmleriYukle(var fdao:FilmlerDao) : List<Filmler> =
         withContext(Dispatchers.IO){
+            /*Verileri Database 'den alacağız.
             val filmlerListesi = ArrayList<Filmler>()
 
             val f1 = Filmler(1,"Djongo", "django",24)
@@ -21,8 +23,8 @@ class FilmlerDataSource {
             filmlerListesi.add(f3)
             filmlerListesi.add(f4)
             filmlerListesi.add(f5)
-            filmlerListesi.add(f6)
+            filmlerListesi.add(f6)*/
 
-            return@withContext filmlerListesi
+            return@withContext fdao.filmleriYukle()
         }
 }
