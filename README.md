@@ -44,6 +44,24 @@
 
 ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/2b63000e-3e25-428f-a15d-9ccf383b20f4)
 
+#### Kişiler Uygulaması MVVM
+
+* MVVM ile kişiler uygulamamıza devam edip aşağıdaki modeli tasarlayacağız.
+
+![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/f98fc7bf-a9ed-4805-bedf-a49d1663148c)
+
+#### HILT Module Oluşturma
+
+![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/aea78582-1bc3-47a3-8269-2769063c0176)
+
+#### RETROFIT
+![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/6a19225d-39bc-4143-b048-f66326de8444)
+
+#### RESTFUL MİMARİSİ
+
+![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/ae5f81a8-5cd2-4bbd-afc2-1d7853332bb3)
+
+
 
 
 

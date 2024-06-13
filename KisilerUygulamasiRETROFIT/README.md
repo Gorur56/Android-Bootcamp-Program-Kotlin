@@ -38,8 +38,13 @@
 #### RETROFIT
 ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/6a19225d-39bc-4143-b048-f66326de8444)
 
+#### RESTFUL MİMARİSİ
+
+![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/ae5f81a8-5cd2-4bbd-afc2-1d7853332bb3)
+
+
 ###### JSON
-* {} olduğunda jsonda bir class oluşturacağı anlamına gelir.
+* Her {} olduğunda jsonda bir class oluşturacağı anlamına gelir. Yani her Süslü parantez aralığı için ayrı bir sınıf oluşturulur.
 * CRUD işlemleri kullanırız.
 * Class 'mız ile aşağıdaki linkte test etiğimiz bilgiler aynı olmalıdır.
 
@@ -75,7 +80,25 @@
    "success":1
   }
 
+* Her süslü parantes arlığı için bir class olmalıdır. Aşağıdaki satır için Kisiler sınıfımız vardır. Ve her model her iki kayıt için kullanılabilir.
 
+      "kisiler":[
+     {
+          "kisi_id":"15674",
+          "kisi_ad":"Ahmet",
+          "kisi_tel":"3333"
+      },
+      {
+         "kisi_id":"16169",
+         "kisi_ad":"x",
+         "kisi_tel":"y"
+      }
+
+* Dış parantez içinde bir sınıf oluşturmamız gerekiyor
+{
+   "kisiler":[],
+   "success":1
+}
 
 
 
