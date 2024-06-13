@@ -60,11 +60,11 @@
 * Veri Çıktısı:
 
   {
-   "kisiler":[
-      {
-         "kisi_id":"15674",
-         "kisi_ad":"Ahmet",
-         "kisi_tel":"3333"
+    "kisiler":[
+     {
+          "kisi_id":"15674",
+          "kisi_ad":"Ahmet",
+          "kisi_tel":"3333"
       },
       {
          "kisi_id":"16169",
@@ -73,7 +73,7 @@
       }
    ],
    "success":1
-}
+  }
 
 
 
