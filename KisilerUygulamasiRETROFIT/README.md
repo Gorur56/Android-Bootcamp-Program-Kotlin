@@ -35,4 +35,51 @@
 
 ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/aea78582-1bc3-47a3-8269-2769063c0176)
 
+#### RETROFIT
+![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/6a19225d-39bc-4143-b048-f66326de8444)
+
+###### JSON
+* {} olduğunda jsonda bir class oluşturacağı anlamına gelir.
+* CRUD işlemleri kullanırız.
+* Class 'mız ile aşağıdaki linkte test etiğimiz bilgiler aynı olmalıdır.
+
+ https://jsonformatter.curiousconcept.com/#
+ veri girişi: {"success":0,"message":"Required field(s) is missing"}
+ veri çıktısı:
+ {
+   "success":0,
+   "message":"Required field(s) is missing"
+}
+
+###### İkinci JSON Formatı
+* veri girişi:
+
+{"kisiler":[{"kisi_id":"15674","kisi_ad":"Ahmet","kisi_tel":"3333"},
+{"kisi_id":"16169","kisi_ad":"x","kisi_tel":"y"}],"success":1}
+
+* Veri Çıktısı:
+
+  {
+    "kisiler":[
+     {
+          "kisi_id":"15674",
+          "kisi_ad":"Ahmet",
+          "kisi_tel":"3333"
+      },
+      {
+         "kisi_id":"16169",
+         "kisi_ad":"x",
+         "kisi_tel":"y"
+      }
+   ],
+   "success":1
+  }
+
+
+
+
+
+
+
+
 
