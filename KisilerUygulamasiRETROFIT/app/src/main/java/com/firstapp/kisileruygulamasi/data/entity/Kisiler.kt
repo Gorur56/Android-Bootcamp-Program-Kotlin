@@ -2,9 +2,9 @@ package com.firstapp.kisileruygulamasi.data.entity
 
 import java.io.Serializable
 
-data class Kisiler( var kisi_id:Int,
-                    var kisi_ad:String,
-                    var kisi_tel:String) : Serializable {
+data class Kisiler(var kisi_id:Int,
+                   var kisi_ad:String,
+                   var kisi_tel:String) : Serializable {
 
     /* JSON FORMATI
     {"kisiler":[{"kisi_id":"15674","kisi_ad":"Ahmet","kisi_tel":"3333"},

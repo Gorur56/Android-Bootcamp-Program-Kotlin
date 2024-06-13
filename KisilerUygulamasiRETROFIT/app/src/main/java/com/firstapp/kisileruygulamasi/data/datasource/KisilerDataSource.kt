@@ -6,24 +6,12 @@ import com.firstapp.kisileruygulamasi.retrofit.KisilerDao
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class KisilerDataSource(var kdao: KisilerDao) {
+class KisilerDataSource(var kdao:KisilerDao) {
     suspend fun kisiYukle() : List<Kisiler> =
         withContext(Dispatchers.IO){
-            /* Verileri servisten çekeceğiz.
-            //İtem oluşturma için arrayList oluşturuyoruz.
-            val kisilerListesi = ArrayList<Kisiler>()
+            /* Verileri servisten çekeceğiz.*/
 
-            //Kişiler nesne oluştur
-            val k1 = Kisiler(1, "Ahmet", "523634896")
-            val k2 = Kisiler(2,"Mehmet","1234567852")
-            val k3 = Kisiler(3,"Ayşe","5289634578")
-
-            //Nesneleri arrayliste ekle
-            kisilerListesi.add(k1)
-            kisilerListesi.add(k2)
-            kisilerListesi.add(k3)*/
-
-            return@withContext kdao.kisleriYukle().kisiler //Webservisten kişi listesini getirir.
+            return@withContext kdao.kisileriYukle().kisiler //Webservisten kişi listesini getirir.
         }
 
     suspend fun ara(aramaKelimesi:String) : List<Kisiler> =

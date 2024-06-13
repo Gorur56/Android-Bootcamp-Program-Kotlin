@@ -10,5 +10,5 @@ interface KisilerDao {
 
     //Tüm kişiler bizden bir veri istemediği için get ile istek atarız
     @GET("kisiler/tum_kisiler.php")
-    suspend fun kisleriYukle() : KisilerCevap
+    suspend fun kisileriYukle() : KisilerCevap
 }

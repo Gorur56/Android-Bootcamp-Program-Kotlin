@@ -6,7 +6,7 @@ import retrofit2.http.Url
 
 class RetrofitClient {
     companion object{ //static
-        fun getClient(baseUrl: String) : Retrofit {
+        fun getClient(baseUrl:String) : Retrofit {
             //addConverterFactory(): Json dosyasını sınıflara çevirir.
             return Retrofit.Builder()
                 .baseUrl(baseUrl)
