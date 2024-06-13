@@ -9,9 +9,10 @@ import kotlinx.coroutines.withContext
 class KisilerDataSource(var kdao:KisilerDao) {
     suspend fun kisiYukle() : List<Kisiler> =
         withContext(Dispatchers.IO){
-            /* Verileri servisten çekeceğiz.*/
+            /* Verileri servisten çekeceğiz
+            Webservisten kişi listesini getirir.*/
 
-            return@withContext kdao.kisileriYukle().kisiler //Webservisten kişi listesini getirir.
+            return@withContext kdao.kisileriYukle().kisiler
         }
 
     suspend fun ara(aramaKelimesi:String) : List<Kisiler> =
@@ -25,7 +26,8 @@ class KisilerDataSource(var kdao:KisilerDao) {
         }
     suspend fun kaydet(kisi_ad:String, kisi_tel:String)
     {
-        Log.e("Kisi Kaydet","$kisi_ad - $kisi_tel")
+        //Webservice kullanarak kayıt işlemi yapacağız.
+        kdao.kaydet(kisi_ad,kisi_tel)
     }
 
     suspend fun guncelle(kisi_id:Int, kisi_ad: String, kisi_tel: String)

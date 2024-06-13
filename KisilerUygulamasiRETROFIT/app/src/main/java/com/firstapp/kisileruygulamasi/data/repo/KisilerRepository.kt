@@ -11,7 +11,7 @@ class KisilerRepository( var kds:KisilerDataSource) {
 
     suspend fun sil(kisi_id: Int) = kds.sil(kisi_id)
 
-    suspend fun kisiYukle() : List<Kisiler> = kds.kisiYukle()
+    suspend fun kisileriYukle() : List<Kisiler> = kds.kisiYukle()
 
     suspend fun ara(aramaKelimesi:String) : List<Kisiler> = kds.ara(aramaKelimesi)
 }

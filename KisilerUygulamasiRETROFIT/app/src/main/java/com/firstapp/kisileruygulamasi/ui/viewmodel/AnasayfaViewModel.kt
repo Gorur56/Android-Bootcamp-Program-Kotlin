@@ -1,5 +1,6 @@
 package com.firstapp.kisileruygulamasi.ui.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.firstapp.kisileruygulamasi.data.entity.Kisiler
@@ -31,9 +32,11 @@ class AnasayfaViewModel @Inject constructor(var krepo:KisilerRepository) : ViewM
     fun kisiYukle() {
         CoroutineScope(Dispatchers.Main).launch {
             try {
-                kisilerListesi.value = krepo.kisiYukle()
+                kisilerListesi.value = krepo.kisileriYukle()
             }
-            catch (e:Exception) { }
+            catch (e:Exception) {
+                Log.e("Error", "Exception: ${e.message}")
+            }
 
         }
     }
@@ -42,7 +45,9 @@ class AnasayfaViewModel @Inject constructor(var krepo:KisilerRepository) : ViewM
         CoroutineScope(Dispatchers.Main).launch {
             try {
                 kisilerListesi.value = krepo.ara(aramaKelimesi)
-            }catch (e:Exception){ }
+            }catch (e:Exception){
+                Log.e("Error", "Exception: ${e.message}")
+            }
 
         }
     }

@@ -16,13 +16,12 @@ class AppModule {
     @Provides
     @Singleton
     fun provideKisilerDataSource(kdao:KisilerDao) : KisilerDataSource {
-        //Bu fonksiyonu aşağıda repository nin parametresini göndermek için oluşturduk
         return KisilerDataSource(kdao)
     }
 
     @Provides
     @Singleton
-    fun provideKisilerRepository(kds:KisilerDataSource) :KisilerRepository{
+    fun provideKisilerRepository(kds:KisilerDataSource) : KisilerRepository {
         return KisilerRepository(kds)
     }
 
