@@ -30,13 +30,20 @@ class AnasayfaViewModel @Inject constructor(var krepo:KisilerRepository) : ViewM
 
     fun kisiYukle() {
         CoroutineScope(Dispatchers.Main).launch {
-            kisilerListesi.value = krepo.kisiYukle()
+            try {
+                kisilerListesi.value = krepo.kisiYukle()
+            }
+            catch (e:Exception) { }
+
         }
     }
 
     fun ara(aramaKelimesi:String) {
         CoroutineScope(Dispatchers.Main).launch {
-            kisilerListesi.value = krepo.ara(aramaKelimesi)
+            try {
+                kisilerListesi.value = krepo.ara(aramaKelimesi)
+            }catch (e:Exception){ }
+
         }
     }
 }
