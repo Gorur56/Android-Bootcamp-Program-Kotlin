@@ -38,6 +38,16 @@
 #### RETROFIT
 
 ###### JSON
+* {} olduğunda jsonda bir class oluşturacağı anlamına gelir.
+* CRUD işlemleri kullanırız.
+* Class 'mız ile aşağıdaki linkte test etiğimiz bilgiler aynı olmalıdır.
+
+ https://jsonformatter.curiousconcept.com/#
+
+ {
+   "success":0,
+   "message":"Required field(s) is missing"
+}
 
 ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/6a19225d-39bc-4143-b048-f66326de8444)
 
