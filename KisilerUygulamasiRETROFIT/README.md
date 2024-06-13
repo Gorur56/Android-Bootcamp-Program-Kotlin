@@ -38,6 +38,11 @@
 #### RETROFIT
 ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/6a19225d-39bc-4143-b048-f66326de8444)
 
+#### RESTFUL MİMARİSİ
+
+![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/ae5f81a8-5cd2-4bbd-afc2-1d7853332bb3)
+
+
 ###### JSON
 * Her {} olduğunda jsonda bir class oluşturacağı anlamına gelir. Yani her Süslü parantez aralığı için ayrı bir sınıf oluşturulur.
 * CRUD işlemleri kullanırız.
