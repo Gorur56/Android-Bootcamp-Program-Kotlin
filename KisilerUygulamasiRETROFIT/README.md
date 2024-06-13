@@ -35,4 +35,11 @@
 
 ![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/aea78582-1bc3-47a3-8269-2769063c0176)
 
+#### RETROFIT
+
+###### JSON
+
+![image](https://github.com/Gorur56/Android-Bootcamp-Program-Kotlin/assets/54911292/6a19225d-39bc-4143-b048-f66326de8444)
+
+
 
