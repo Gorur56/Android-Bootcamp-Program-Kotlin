@@ -27,4 +27,5 @@ data class Kisiler( var kisi_id:Int,
        ],
        "success":1
     }*/
+
 }
