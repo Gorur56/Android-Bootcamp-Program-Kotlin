@@ -19,12 +19,22 @@ class AnasayfaViewModel @Inject constructor(var frepo:FilmlerRepository) : ViewM
 
     init {
         //programbaşlayınca listeyi yükler.
-        filmleriYukle()
+        try {
+            filmleriYukle()
+        }catch (e:Exception) {
+
+        }
+
     }
 
     fun filmleriYukle(){
         CoroutineScope(Dispatchers.Main).launch {
-            filmlerListesi.value = frepo.filmleriYukle()
+            try {
+                filmlerListesi.value = frepo.filmleriYukle()
+            }catch (e:Exception){
+                
+            }
+
         }
     }
 }
