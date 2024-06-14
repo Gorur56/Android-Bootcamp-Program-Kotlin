@@ -1,7 +1,10 @@
 package com.example.filmlerapp.di
 
 import com.example.filmlerapp.data.datasource.FilmlerDataSource
+import com.example.filmlerapp.data.entity.Filmler
 import com.example.filmlerapp.data.repo.FilmlerRepository
+import com.example.filmlerapp.retrofit.ApiUtils
+import com.example.filmlerapp.retrofit.FilmlerDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -13,9 +16,9 @@ import javax.inject.Singleton
 class AppModule {
     @Provides
     @Singleton
-    fun provideFilmlerDataSource() : FilmlerDataSource
+    fun provideFilmlerDataSource(fdao:FilmlerDao) : FilmlerDataSource
     {
-        return FilmlerDataSource()
+        return FilmlerDataSource(fdao)
     }
 
     @Provides
@@ -23,5 +26,11 @@ class AppModule {
     fun provideFilmlerRepository(fds:FilmlerDataSource) : FilmlerRepository
     {
         return FilmlerRepository(fds)
+    }
+
+    @Provides
+    @Singleton
+    fun provideFilmlerDao(): FilmlerDao {
+        return ApiUtils.getFilmlerDao()
     }
 }

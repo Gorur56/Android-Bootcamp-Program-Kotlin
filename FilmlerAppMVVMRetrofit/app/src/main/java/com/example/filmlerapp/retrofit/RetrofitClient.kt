@@ -1,0 +1,17 @@
+package com.example.filmlerapp.retrofit
+
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+
+class RetrofitClient {
+    //Perse edip listeye çevirecek sınıf.
+    companion object{ //static
+        fun getClient(baseUrl: String) : Retrofit{
+
+            return Retrofit.Builder()
+                .baseUrl(baseUrl)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+        }
+    }
+}
