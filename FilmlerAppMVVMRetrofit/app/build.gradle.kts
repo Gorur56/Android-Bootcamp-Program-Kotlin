@@ -70,6 +70,14 @@ dependencies {
     kapt("androidx.hilt:hilt-compiler:1.2.0")
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
     implementation("androidx.compose.material:material:1.6.7")
+
+    //webservis
+    implementation("com.squareup.retrofit2:retrofit:2.9.0") {
+        exclude(module = "okhttp")
+    }
+    implementation("com.google.code.gson:gson:2.10.1")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.github.bumptech.glide:glide:4.13.2")
 }
 
 kapt {
