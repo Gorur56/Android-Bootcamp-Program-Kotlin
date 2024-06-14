@@ -46,7 +46,7 @@ class AnasayfaViewModel @Inject constructor(var krepo:KisilerRepository) : ViewM
             try {
                 kisilerListesi.value = krepo.ara(aramaKelimesi)
             }catch (e:Exception){
-                Log.e("Error", "Exception: ${e.message}")
+                Log.e("Error", "Exception: ${e.stackTrace}")
             }
 
         }

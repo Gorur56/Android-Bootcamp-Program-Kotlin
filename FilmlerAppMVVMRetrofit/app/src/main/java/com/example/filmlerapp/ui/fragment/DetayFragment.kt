@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
 import com.example.filmlerapp.R
 import com.example.filmlerapp.databinding.FragmentAnasayfaBinding
 import com.example.filmlerapp.databinding.FragmentDetayBinding
@@ -25,8 +26,13 @@ class DetayFragment : Fragment() {
         //binding.toolbarDetay.title = film.ad
         binding.filmNesnesi = film
 
+        /*Glide ile web servisten alacağız.
         binding.ivFilm.setImageResource(
-            resources.getIdentifier(film.resim,"drawable",requireContext().packageName))
+            resources.getIdentifier(film.resim,"drawable",requireContext().packageName))*/
+        println(if(film.resim != null) "True" else "False")
+
+        val url = "http://kasimadalan.pe.hu/filmler_yeni/resimler/${film.resim}"
+        Glide.with(this).load(url).override(500,750).into(binding.ivFilm)
 
         //binding.tvFiyat.text = "${film.fiyat} $"
         return binding.root

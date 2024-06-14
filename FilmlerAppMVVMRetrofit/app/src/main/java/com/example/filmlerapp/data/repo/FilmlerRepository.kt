@@ -7,4 +7,5 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 class FilmlerRepository(var fds:FilmlerDataSource){
     //var fds = FilmlerDataSource()
     suspend fun filmleriYukle() : List<Filmler> = fds.filmleriYukle()
+
 }
