@@ -7,6 +7,7 @@ import androidx.core.R
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.filmlerapp.data.entity.Filmler
 import com.example.filmlerapp.databinding.CardTasarimBinding
 import com.example.filmlerapp.databinding.FragmentAnasayfaBinding
@@ -30,8 +31,12 @@ class FilmlerAdapter( var mContext:Context, var filmlerListesi:List<Filmler>)
         val film = filmlerListesi.get(position)
         val t = holder.tasarim
 
+        /* Glide kütüphanesi ile Webservisten resimleri alacağız.
         t.imageViewFilm.setImageResource(
-            mContext.resources.getIdentifier(film.resim,"drawable",mContext.packageName))
+            mContext.resources.getIdentifier(film.resim,"drawable",mContext.packageName))*/
+
+        val url = "http://kasimadalan.pe.hu/filmler_yeni/resimler/${film.resim}"
+        Glide.with(mContext).load(url).override(500,750).into(t.imageViewFilm)
 
         t.filmNesnesi = film
         //t.textViewFiyat.text = "${film.fiyat} $"

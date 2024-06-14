@@ -32,7 +32,7 @@ class AnasayfaViewModel @Inject constructor(var frepo:FilmlerRepository) : ViewM
             try {
                 filmlerListesi.value = frepo.filmleriYukle()
             }catch (e:Exception){
-                
+
             }
 
         }
