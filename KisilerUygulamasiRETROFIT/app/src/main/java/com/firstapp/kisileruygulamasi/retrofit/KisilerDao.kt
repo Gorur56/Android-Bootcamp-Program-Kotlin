@@ -17,8 +17,9 @@ interface KisilerDao {
     suspend fun kisileriYukle() : KisilerCevap
 
     //Insert Kayıt ekleme
+    //@Field("kisi_ad"):Web service ile birebir aynı olmalıdır.
+
     @POST("kisiler/insert_kisiler.php")
     @FormUrlEncoded //Türkçedesteği için
-    //@Field("kisi_ad"):Web service ile birebir aynı olmalıdır.
     suspend fun kaydet(@Field("kisi_ad") kisi_ad:String, @Field("kisi_tel") kisi_tel:String) : CRUDCevap //bu islem için oluşturulan sınıf çağırılır.
 }
