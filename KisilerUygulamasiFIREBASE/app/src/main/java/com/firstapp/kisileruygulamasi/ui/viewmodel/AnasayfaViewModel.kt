@@ -26,10 +26,10 @@ class AnasayfaViewModel @Inject constructor(var krepo:KisilerRepository) : ViewM
     }
 
     fun kisiYukle() {
-        kisilerListesi.value = krepo.kisiYukle()
+        kisilerListesi = krepo.kisiYukle()
     }
 
     fun ara(aramaKelimesi:String) {
-        kisilerListesi.value = krepo.ara(aramaKelimesi)
+        kisilerListesi = krepo.ara(aramaKelimesi)
     }
 }

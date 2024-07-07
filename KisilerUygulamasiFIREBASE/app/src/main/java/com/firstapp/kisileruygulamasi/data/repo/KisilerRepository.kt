@@ -1,5 +1,6 @@
 package com.firstapp.kisileruygulamasi.data.repo
 
+import androidx.lifecycle.MutableLiveData
 import com.firstapp.kisileruygulamasi.data.datasource.KisilerDataSource
 import com.firstapp.kisileruygulamasi.data.entity.Kisiler
 
@@ -11,7 +12,7 @@ class KisilerRepository( var kds:KisilerDataSource) {
 
     fun sil(kisi_id: String) = kds.sil(kisi_id)
 
-    fun kisiYukle() : List<Kisiler> = kds.kisiYukle()
+    fun kisiYukle() : MutableLiveData<List<Kisiler>> = kds.kisiYukle()
 
-    fun ara(aramaKelimesi:String) : List<Kisiler> = kds.ara(aramaKelimesi)
+    fun ara(aramaKelimesi:String) : MutableLiveData<List<Kisiler>> = kds.ara(aramaKelimesi)
 }
