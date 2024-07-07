@@ -36,7 +36,27 @@ class KisilerDataSource( var collectionKisiler: CollectionReference) {
     }
 
     fun ara(aramaKelimesi:String) : MutableLiveData<List<Kisiler>> {
-        return MutableLiveData<List<Kisiler>>()
+        collectionKisiler.addSnapshotListener{ value, error->
+            if(value != null){
+                val liste = ArrayList<Kisiler>()
+
+                for (d in value.documents)
+                {
+                    val kisi = d.toObject(Kisiler::class.java)
+
+                    if (kisi != null)
+                    {
+                        //Arama işlemi için if koşulu
+                        if(kisi.kisi_ad!!.lowercase().contains(aramaKelimesi.lowercase())){
+                            kisi.kisi_id = d.id
+                            liste.add(kisi)
+                        }
+                    }
+                }
+                kisilerListesi.value = liste
+            }
+        }
+        return kisilerListesi
     }
 
     fun kaydet(kisi_ad:String, kisi_tel:String)
