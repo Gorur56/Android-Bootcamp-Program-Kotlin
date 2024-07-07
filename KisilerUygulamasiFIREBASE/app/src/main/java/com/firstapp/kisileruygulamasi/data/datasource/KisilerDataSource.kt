@@ -74,5 +74,6 @@ class KisilerDataSource( var collectionKisiler: CollectionReference) {
     fun sil(kisi_id: String)
     {
         Log.e("Kişi Sil", "$kisi_id")
+        collectionKisiler.document(kisi_id).delete()
     }
 }
