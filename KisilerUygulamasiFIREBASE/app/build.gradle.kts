@@ -1,12 +1,12 @@
 plugins {
     id("com.android.application")
+    id("com.google.gms.google-services")
     id("org.jetbrains.kotlin.android")
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
     id("dagger.hilt.android.plugin")
     id("kotlinx-serialization")
     id("androidx.navigation.safeargs.kotlin")
-    id("com.google.gms.google-services")
 }
 
 android {

@@ -2,10 +2,11 @@ package com.firstapp.kisileruygulamasi.data.datasource
 
 import android.util.Log
 import com.firstapp.kisileruygulamasi.data.entity.Kisiler
+import com.google.firebase.firestore.CollectionReference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class KisilerDataSource {
+class KisilerDataSource( var collectionKisiler: CollectionReference) {
     fun kisiYukle() : List<Kisiler> {
         return listOf()
     }
@@ -16,7 +17,9 @@ class KisilerDataSource {
 
     fun kaydet(kisi_ad:String, kisi_tel:String)
     {
-        Log.e("Kisi Kaydet","$kisi_ad - $kisi_tel")
+        //Firebase 'de id oluştuğu için burada id yi boş bırakıyoruz.
+        val yeniKisi = Kisiler("",kisi_ad,kisi_tel)
+        collectionKisiler.document().set(yeniKisi)
     }
 
     fun guncelle(kisi_id:String, kisi_ad: String, kisi_tel: String)
