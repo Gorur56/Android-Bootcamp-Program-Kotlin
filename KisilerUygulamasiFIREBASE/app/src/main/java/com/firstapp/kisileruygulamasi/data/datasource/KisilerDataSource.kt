@@ -69,6 +69,14 @@ class KisilerDataSource( var collectionKisiler: CollectionReference) {
     fun guncelle(kisi_id:String, kisi_ad: String, kisi_tel: String)
     {
         Log.e("Kişi Kaydet", "$kisi_id, $kisi_ad, $kisi_tel")
+        //Any: Gelen değerin türleri farklı olabilir.
+        val guncellenenKisi = HashMap<String,Any>()
+        guncellenenKisi["kisi_ad"]  = kisi_ad
+        guncellenenKisi["kisi_tel"] = kisi_tel
+        collectionKisiler.document(kisi_id).update(guncellenenKisi)
+
+
+
     }
 
     fun sil(kisi_id: String)
