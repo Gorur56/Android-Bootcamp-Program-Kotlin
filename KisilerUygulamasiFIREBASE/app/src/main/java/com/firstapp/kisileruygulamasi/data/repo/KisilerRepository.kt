@@ -5,13 +5,13 @@ import com.firstapp.kisileruygulamasi.data.entity.Kisiler
 
 class KisilerRepository( var kds:KisilerDataSource) {
     //var kds = KisilerDataSource()
-    suspend fun  kaydet(kisi_ad:String, kisi_tel:String) = kds.kaydet(kisi_ad,kisi_tel)
+    fun  kaydet(kisi_ad:String, kisi_tel:String) = kds.kaydet(kisi_ad,kisi_tel)
 
-    suspend fun guncelle(kisi_id:String, kisi_ad: String, kisi_tel: String) = kds.guncelle(kisi_id,kisi_ad,kisi_tel)
+    fun guncelle(kisi_id:String, kisi_ad: String, kisi_tel: String) = kds.guncelle(kisi_id,kisi_ad,kisi_tel)
 
-    suspend fun sil(kisi_id: String) = kds.sil(kisi_id)
+    fun sil(kisi_id: String) = kds.sil(kisi_id)
 
-    suspend fun kisiYukle() : List<Kisiler> = kds.kisiYukle()
+    fun kisiYukle() : List<Kisiler> = kds.kisiYukle()
 
-    suspend fun ara(aramaKelimesi:String) : List<Kisiler> = kds.ara(aramaKelimesi)
+    fun ara(aramaKelimesi:String) : List<Kisiler> = kds.ara(aramaKelimesi)
 }
