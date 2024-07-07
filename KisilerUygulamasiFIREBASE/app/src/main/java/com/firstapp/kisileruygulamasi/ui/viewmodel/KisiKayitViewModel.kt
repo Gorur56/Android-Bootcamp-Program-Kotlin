@@ -12,10 +12,6 @@ import javax.inject.Inject
 class KisiKayitViewModel @Inject constructor(var krepo:KisilerRepository): ViewModel() {
     //var krepo = KisilerRepository()
     fun kaydet(kisi_ad:String, kisi_tel:String){
-        //Eğer suspend hatası almak istemiyorsak en son asenkron kullanacğaımız fonksiyonda Coroutine kullanmamız gerekiyor.
-        //Burada da suspen yapsakdık burayı çağıran yerde suspend hatası verir.
-        CoroutineScope(Dispatchers.Main).launch{
-            krepo.kaydet(kisi_ad,kisi_tel)
-        }
+        krepo.kaydet(kisi_ad,kisi_tel)
     }
 }
