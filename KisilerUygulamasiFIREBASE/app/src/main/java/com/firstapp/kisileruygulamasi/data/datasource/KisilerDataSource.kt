@@ -12,7 +12,27 @@ class KisilerDataSource( var collectionKisiler: CollectionReference) {
     var kisilerListesi = MutableLiveData<List<Kisiler>>()
 
     fun kisiYukle() : MutableLiveData<List<Kisiler>> {
-        return MutableLiveData<List<Kisiler>>()
+        //addSnapshotListener: Gerçek zamanlı veri okumamızı sağlar.
+        collectionKisiler.addSnapshotListener { value, error ->
+            if(value != null)
+            {
+                val liste = ArrayList<Kisiler>()
+                for(d in value.documents) //documents gelen veri sayısı kadar çalış
+                {
+                    //Gelen d 'yi yani kisiid,ad, ve tel verisi kisi nesnesine çeviriyoruz.
+                    val kisi = d.toObject(Kisiler::class.java)
+
+                    if(kisi != null)
+                    {
+                        kisi.kisi_id = d.id
+                        liste.add(kisi) //Gelen nesneyi listeye ata
+                    }
+                }
+
+                kisilerListesi.value = liste //Listeyi arayüze gönder
+            }
+        }
+        return kisilerListesi
     }
 
     fun ara(aramaKelimesi:String) : MutableLiveData<List<Kisiler>> {
