@@ -23,7 +23,6 @@ class AnasayfaViewModel @Inject constructor(var krepo:KisilerRepository) : ViewM
     fun sil(kisi_id:String)
     {
         krepo.sil(kisi_id)
-        kisiYukle() //Silme işleminden sonra listeyi güncelle
     }
 
     fun kisiYukle() {
