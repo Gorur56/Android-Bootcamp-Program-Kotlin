@@ -20,7 +20,7 @@ class AnasayfaViewModel @Inject constructor(var krepo:KisilerRepository) : ViewM
         kisiYukle()
     }
 
-    fun sil(kisi_id:Int)
+    fun sil(kisi_id:String)
     {
         CoroutineScope(Dispatchers.Main).launch {
             krepo.sil(kisi_id)

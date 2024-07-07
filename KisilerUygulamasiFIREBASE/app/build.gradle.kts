@@ -6,6 +6,7 @@ plugins {
     id("dagger.hilt.android.plugin")
     id("kotlinx-serialization")
     id("androidx.navigation.safeargs.kotlin")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -71,6 +72,9 @@ dependencies {
     kapt("androidx.hilt:hilt-compiler:1.2.0")
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
     implementation("androidx.compose.material:material:1.6.7")
+
+    implementation(platform("com.google.firebase:firebase-bom:33.1.1"))
+    implementation("com.google.firebase:firebase-firestore")
 }
 
 kapt {
