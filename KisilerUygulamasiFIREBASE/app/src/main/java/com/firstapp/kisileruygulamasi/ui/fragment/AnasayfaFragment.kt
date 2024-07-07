@@ -66,9 +66,4 @@ class AnasayfaFragment : Fragment() {
         //Navigation.findNavController(it).navigate(R.id.kisiKayitGecis)
         Navigation.gecisYap(it,R.id.kisiKayitGecis) //Extensions
     }
-
-    override fun onResume() {
-        super.onResume()
-        viewmodel.kisiYukle() //Anasayfaya döndüğümüzde bu method çalışır.
-    }
 }
