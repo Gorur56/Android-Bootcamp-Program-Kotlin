@@ -34,6 +34,14 @@ class KelimlerAdapter(private  val mContext:Context, private val kelimelerListes
     }
 
     override fun onBindViewHolder(holder: CardTasarimTutucu, position: Int) {
-        TODO("Not yet implemented")
+        //Gelen veri kümesini işliyoruz.
+        val kelime = kelimelerListesi.get(position)
+        holder.textViewIngilizce.text = kelime.ingilizce
+        holder.textViewTurkce.text = kelime.turkce
+
+        holder.cardview.setOnClickListener{
+            
+        }
+
     }
 }
