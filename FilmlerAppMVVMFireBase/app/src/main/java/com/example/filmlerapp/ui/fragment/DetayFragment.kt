@@ -24,7 +24,7 @@ class DetayFragment : Fragment() {
 
         binding.filmNesnesi = film
 
-        val url = "http://kasimadalan.pe.hu/filmler_yeni/resimler/${film.resim}"
+        val url = "http://kasimadalan.pe.hu/filmler/resimler/${film.resim}"
         Glide.with(this).load(url).override(500,750).into(binding.ivFilm)
 
         return binding.root

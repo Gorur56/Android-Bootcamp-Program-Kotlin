@@ -32,7 +32,7 @@ class FilmlerAdapter(var mContext:Context,var filmlerListesi:List<Filmler>)
         val film = filmlerListesi.get(position)
         val t = holder.tasarim
 
-        val url = "http://kasimadalan.pe.hu/filmler_yeni/resimler/${film.resim}"
+        val url = "http://kasimadalan.pe.hu/filmler/resimler/${film.resim}"
         Glide.with(mContext).load(url).override(500, 750).into(t.imageViewFilm)
 
         t.filmNesnesi = film
