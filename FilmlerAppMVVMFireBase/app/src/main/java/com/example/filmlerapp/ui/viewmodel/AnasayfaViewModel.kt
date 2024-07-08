@@ -15,7 +15,7 @@ class AnasayfaViewModel @Inject constructor(var frepo:FilmlerRepository) : ViewM
     //var frepo = FilmlerRepository()
 
     //Veri aldığımız için LiveData kullanmamız gerekiyor.
-    val filmlerListesi = MutableLiveData<List<Filmler>>()
+    var filmlerListesi = MutableLiveData<List<Filmler>>()
 
     init {
         //programbaşlayınca listeyi yükler.
@@ -23,8 +23,6 @@ class AnasayfaViewModel @Inject constructor(var frepo:FilmlerRepository) : ViewM
     }
 
     fun filmleriYukle(){
-        CoroutineScope(Dispatchers.Main).launch {
-            filmlerListesi.value = frepo.filmleriYukle()
-        }
+        filmlerListesi = frepo.filmleriYukle()
     }
 }
