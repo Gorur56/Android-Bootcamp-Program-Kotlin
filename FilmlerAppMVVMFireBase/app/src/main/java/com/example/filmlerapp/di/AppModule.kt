@@ -2,6 +2,9 @@ package com.example.filmlerapp.di
 
 import com.example.filmlerapp.data.datasource.FilmlerDataSource
 import com.example.filmlerapp.data.repo.FilmlerRepository
+import com.google.firebase.Firebase
+import com.google.firebase.firestore.CollectionReference
+import com.google.firebase.firestore.firestore
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -13,9 +16,9 @@ import javax.inject.Singleton
 class AppModule {
     @Provides
     @Singleton
-    fun provideFilmlerDataSource() : FilmlerDataSource
+    fun provideFilmlerDataSource(collectionFilmler:CollectionReference) : FilmlerDataSource
     {
-        return FilmlerDataSource()
+        return FilmlerDataSource(collectionFilmler)
     }
 
     @Provides
@@ -23,5 +26,11 @@ class AppModule {
     fun provideFilmlerRepository(fds:FilmlerDataSource) : FilmlerRepository
     {
         return FilmlerRepository(fds)
+    }
+
+    @Provides
+    @Singleton
+    fun provideCollectionreference() : CollectionReference {
+        return Firebase.firestore.collection("Filmler")
     }
 }

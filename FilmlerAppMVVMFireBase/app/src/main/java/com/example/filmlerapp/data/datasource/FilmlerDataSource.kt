@@ -1,10 +1,11 @@
 package com.example.filmlerapp.data.datasource
 
 import com.example.filmlerapp.data.entity.Filmler
+import com.google.firebase.firestore.CollectionReference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class FilmlerDataSource {
+class FilmlerDataSource(var collectionFilmler: CollectionReference) {
     suspend fun filmleriYukle() : List<Filmler> =
         withContext(Dispatchers.IO){
             val filmlerListesi = ArrayList<Filmler>()
