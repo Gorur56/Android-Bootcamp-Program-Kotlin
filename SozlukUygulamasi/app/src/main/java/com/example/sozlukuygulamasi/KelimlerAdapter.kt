@@ -40,7 +40,7 @@ class KelimlerAdapter(private  val mContext:Context, private val kelimelerListes
         holder.textViewTurkce.text = kelime.turkce
 
         holder.cardview.setOnClickListener{
-            
+
         }
 
     }
