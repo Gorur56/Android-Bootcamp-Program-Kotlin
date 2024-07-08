@@ -1,15 +1,18 @@
 package com.example.sozlukuygulamasi
 
 import android.os.Bundle
+import android.util.Log
+import android.view.Menu
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
     private lateinit var kelimelerListe:ArrayList<Kelimeler>
     private lateinit var adapter:KelimlerAdapter
 
@@ -51,5 +54,31 @@ class MainActivity : AppCompatActivity() {
 
         rv.adapter = adapter
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.toolbar_menu,menu)
+
+        val item = menu?.findItem(R.id.action_ara)
+        val searchView = item?.actionView as SearchView
+
+        searchView.setOnQueryTextListener(this)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onQueryTextSubmit(query: String?): Boolean {
+        //Arama tuşuna basınca search yapar.
+        if (query != null) {
+            Log.e("Gönderilen Arama",query)
+        }
+        return true
+    }
+
+    override fun onQueryTextChange(newText: String?): Boolean {
+        //Her girilen harf için search yapar.
+        if (newText != null) {
+            Log.e("Harf girdikce", newText)
+        }
+        return true
     }
 }
