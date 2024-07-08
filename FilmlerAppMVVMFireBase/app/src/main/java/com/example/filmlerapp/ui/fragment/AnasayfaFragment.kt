@@ -9,9 +9,13 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import com.example.filmlerapp.R
+import com.example.filmlerapp.data.entity.Filmler
 import com.example.filmlerapp.databinding.FragmentAnasayfaBinding
 import com.example.filmlerapp.ui.adapter.FilmlerAdapter
 import com.example.filmlerapp.ui.viewmodel.AnasayfaViewModel
+import com.google.firebase.firestore.firestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -30,6 +34,24 @@ class AnasayfaFragment : Fragment() {
             // binding.filmRv.adapter = filmlerAdapter layout dosyasına taşındıç
             binding.filmlerAdapter = filmlerAdapter
         }
+
+        /* Firebase tablo oluşturma veri kaydetme
+        val db = Firebase.firestore
+        val collectionFilmler = db.collection("Filmler")
+
+        val f1 = Filmler("","Djongo", "django",24)
+        val f2 = Filmler("","Interstellar", "interstellar",32)
+        val f3 = Filmler("","Inception", "inception",16)
+        val f4 = Filmler("","The Hateful Eight", "thehatefuleight",28)
+        val f5 = Filmler("","The Pianist", "thepianist",24)
+        val f6 = Filmler("","Anadoluda", "anadoluda",24)
+
+        collectionFilmler.document().set(f1)
+        collectionFilmler.document().set(f2)
+        collectionFilmler.document().set(f3)
+        collectionFilmler.document().set(f4)
+        collectionFilmler.document().set(f5)
+        collectionFilmler.document().set(f6)*/
 
         return binding.root
     }
