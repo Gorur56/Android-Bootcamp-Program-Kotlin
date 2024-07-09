@@ -3,10 +3,10 @@ package com.example.sozlukuygulamasi
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-data class KelimelerCevap(  @SerializedName
+data class KelimelerCevap(  @SerializedName("kelimeler")
                             @Expose
                             var kelimeler: List<Kelimeler>,
-                            @SerializedName
+                            @SerializedName("success")
                             @Expose
                             var success: Int) {
 
