@@ -62,6 +62,7 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
     override fun onQueryTextSubmit(query: String?): Boolean {
         //Arama tuşuna basınca search yapar.
         if (query != null) {
+            aramaYap(query)
             Log.e("Gönderilen Arama",query)
         }
         return true
@@ -70,6 +71,7 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
     override fun onQueryTextChange(newText: String?): Boolean {
         //Her girilen harf için search yapar.
         if (newText != null) {
+            aramaYap(newText)
             Log.e("Harf girdikce", newText)
         }
         return true
@@ -83,6 +85,22 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
                 {
                     val liste = response.body()?.kelimeler
                     adapter = liste?.let { KelimlerAdapter(this@MainActivity, it) }!!
+                    rv.adapter = adapter
+                }
+            }
+
+            override fun onFailure(call: Call<KelimelerCevap>, t: Throwable) {
+
+            }
+        })
+    }
+
+    fun aramaYap(aramaKelimle: String){
+        kdi.kelimeAra(aramaKelimle).enqueue(object : Callback<KelimelerCevap> {
+            override fun onResponse(call: Call<KelimelerCevap>, response: Response<KelimelerCevap>) {
+                if(response != null) {
+                    val liste = response.body()?.kelimeler
+                    adapter = liste?.let { KelimlerAdapter(this@MainActivity,it) }!!
                     rv.adapter = adapter
                 }
             }
