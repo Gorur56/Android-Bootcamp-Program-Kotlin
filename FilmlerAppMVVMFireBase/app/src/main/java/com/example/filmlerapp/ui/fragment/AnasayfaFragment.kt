@@ -32,6 +32,7 @@ class AnasayfaFragment : Fragment() {
             binding.filmlerAdapter = filmlerAdapter
         }
 
+     /*   Firebase'de tablo oluşturdu. Bir kere çalıştıktan sonra burayı kapat.
         val db = Firebase.firestore
         val collectionFilmler = db.collection("Filmler")
 
@@ -47,7 +48,7 @@ class AnasayfaFragment : Fragment() {
         collectionFilmler.document().set(f3)
         collectionFilmler.document().set(f4)
         collectionFilmler.document().set(f5)
-        collectionFilmler.document().set(f6)
+        collectionFilmler.document().set(f6)*/
 
 
         return binding.root
