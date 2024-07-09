@@ -11,6 +11,6 @@ interface FilmlerDao {
     //base url -> http://kasimadalan.pe.hu/
     //web servis url -> filmler_yeni/tum_filmler.php
 
-    @GET("filmler_yeni/tum_filmler.php")
+    @GET("filmler/tum_filmler.php")
     suspend fun filmleriYukle() : FilmlerCevap
 }

@@ -2,6 +2,7 @@ package com.firstapp.kisileruygulamasi.retrofit
 
 import com.firstapp.kisileruygulamasi.data.entity.CRUDCevap
 import com.firstapp.kisileruygulamasi.data.entity.KisilerCevap
+import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
@@ -21,5 +22,5 @@ interface KisilerDao {
 
     @POST("kisiler/insert_kisiler.php")
     @FormUrlEncoded //Türkçedesteği için
-    suspend fun kaydet(@Field("kisi_ad") kisi_ad:String, @Field("kisi_tel") kisi_tel:String) : CRUDCevap //bu islem için oluşturulan sınıf çağırılır.
+    suspend fun kaydet(@Field("kisi_ad") kisi_ad:String, @Field("kisi_tel") kisi_tel:String) : KisilerCevap //bu islem için oluşturulan sınıf çağırılır.
 }
