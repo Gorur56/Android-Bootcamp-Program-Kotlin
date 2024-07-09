@@ -5,9 +5,12 @@ import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 data class Kelimeler( @SerializedName("kelime_id")
-                        @Expose
+                      @Expose
                       var id: Int,
-                      @SerializedName()
+                      @SerializedName("ingilizce")
+                      @Expose
                       var ingilizce: String,
+                      @SerializedName("turkce")
+                      @Expose
                       var turkce: String ) : Serializable {
 }
