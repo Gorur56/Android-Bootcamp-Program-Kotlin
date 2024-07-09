@@ -9,13 +9,16 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tablayout"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/design_default_color_primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:tabIconTint="@color/white"
-        app:tabTextColor="#E91E63"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="611dp" />
+        app:tabIndicatorColor="@color/design_default_color_error"
+        app:tabTextColor="#E91E63" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -30,4 +33,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:title="Tab Layout Kullanımı"
         app:titleTextColor="#FFFFFF" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/tablayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 </androidx.constraintlayout.widget.ConstraintLayout>
