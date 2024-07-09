@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:tabIconTint="@color/white"
         app:tabIndicatorColor="@color/design_default_color_error"
-        app:tabTextColor="#E91E63" />
+        app:tabTextColor="#FFFFFF" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

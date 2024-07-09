@@ -43,6 +43,10 @@ class MainActivity : AppCompatActivity() {
         TabLayoutMediator(tabLayout, viewPager){tab, position ->
             tab.setText(fragmentBaslikList[position])
         }.attach()
+
+        tabLayout.getTabAt(0)?.setIcon(R.drawable.dolar_icon)
+        tabLayout.getTabAt(1)?.setIcon(R.drawable.ikinci_icon)
+        tabLayout.getTabAt(2)?.setIcon(R.drawable.ucuncu_icon)
     }
 
     inner class MyViewPagerAdapter(fragmentActivity: FragmentActivity): FragmentStateAdapter(fragmentActivity){
