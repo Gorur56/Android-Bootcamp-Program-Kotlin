@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.sozlukuygulamasi.data.Kelimeler
 import java.io.Serializable
 
 class KelimlerAdapter(private  val mContext:Context, private val kelimelerListesi:List<Kelimeler>)

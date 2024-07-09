@@ -1,4 +1,4 @@
-package com.example.sozlukuygulamasi
+package com.example.sozlukuygulamasi.data
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
