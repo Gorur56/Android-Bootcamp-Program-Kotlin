@@ -1,5 +1,6 @@
 package com.example.notlaruygulamasdesign
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -9,6 +10,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.notlaruygulamasdesign.databinding.ActivityDetayBinding
 import com.example.notlaruygulamasdesign.databinding.ActivityNotKayitBinding
+import com.google.android.material.snackbar.Snackbar
 
 class DetayActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetayBinding
@@ -39,10 +41,18 @@ class DetayActivity : AppCompatActivity() {
 
         when(item.itemId){
             R.id.action_sil -> {
+                Snackbar.make(binding.toolbarDetay,"Silinsin mi ?",Snackbar.LENGTH_SHORT)
+                    .setAction("EVET")
+                    {
+                        startActivity(Intent(this@DetayActivity,MainActivity::class.java))
+                        finish()
+                    }.show()
+
                 return true
             }
 
             R.id.action_duzenle -> {
+                startActivity(Intent(this@DetayActivity,MainActivity::class.java))
                 return true
             }
 

@@ -1,12 +1,14 @@
 package com.example.notlaruygulamasdesign.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.notlaruygulamasdesign.DetayActivity
 import com.example.notlaruygulamasdesign.R
 import com.example.notlaruygulamasdesign.data.Notlar
 
@@ -44,7 +46,9 @@ class NotlarAdapter( private  val mContext: Context, private val notlarListe:Lis
         holder.textViewNot2.text = (not.not2).toString()
 
         holder.not_card.setOnClickListener {
-
+            val intent = Intent(mContext, DetayActivity::class.java)
+            intent.putExtra("nesne",not)
+            mContext.startActivity(intent)
         }
     }
 
