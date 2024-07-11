@@ -56,4 +56,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this@MainActivity,NotKayitActivity::class.java))
         }
     }
+
+    override fun onBackPressed() {
+        //Farklı sayfalar ana sayfaya geçince ana sayfa birden fazla açılır.
+        val intent = Intent(Intent.ACTION_MAIN)
+        intent.addCategory(Intent.CATEGORY_HOME)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(intent)
+    }
 }
