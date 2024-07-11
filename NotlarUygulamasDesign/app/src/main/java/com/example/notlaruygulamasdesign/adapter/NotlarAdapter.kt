@@ -41,7 +41,7 @@ class NotlarAdapter( private  val mContext: Context, private val notlarListe:Lis
     override fun onBindViewHolder(holder: CardTasarimTutucu, position: Int) {
         val not = notlarListe.get(position)
 
-        holder.textViewDers.text = not.not_adi
+        holder.textViewDers.text = not.ders_adi
         holder.textViewNot1.text = (not.not1).toString()
         holder.textViewNot2.text = (not.not2).toString()
 

@@ -8,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.notlaruygulamasdesign.data.Notlar
 import com.example.notlaruygulamasdesign.databinding.ActivityDetayBinding
 import com.example.notlaruygulamasdesign.databinding.ActivityNotKayitBinding
 import com.google.android.material.snackbar.Snackbar
@@ -28,6 +29,12 @@ class DetayActivity : AppCompatActivity() {
 
         binding.detayActivityToolbarTitle = "Not Detay"
         setSupportActionBar(binding.toolbarDetay)
+
+        val not = intent.getSerializableExtra("nesne") as Notlar
+
+        binding.editTextDersDetay.setText(not.ders_adi)
+        binding.editTextNot1Detay.setText((not.not1).toString())
+        binding.editTextNot2Detay.setText((not.not2).toString())
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -53,6 +60,7 @@ class DetayActivity : AppCompatActivity() {
 
             R.id.action_duzenle -> {
                 startActivity(Intent(this@DetayActivity,MainActivity::class.java))
+                finish()
                 return true
             }
 
