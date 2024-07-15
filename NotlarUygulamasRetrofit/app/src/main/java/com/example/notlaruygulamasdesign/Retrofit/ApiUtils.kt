@@ -8,4 +8,5 @@ class ApiUtils {
             return RetrofitClient.getClient(BASE_URL).create(NotlarDaoInterface::class.java)
         }
     }
+
 }
