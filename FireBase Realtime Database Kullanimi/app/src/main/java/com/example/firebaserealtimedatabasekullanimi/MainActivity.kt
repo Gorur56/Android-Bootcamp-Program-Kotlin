@@ -45,6 +45,7 @@ class MainActivity : AppCompatActivity() {
 
         refKisiler.child("-O58oLo8T7qN-RRlUiv1").updateChildren(updateInfo)*/
 
+
         /*
         //VERİ OKUMA
 
@@ -73,6 +74,32 @@ class MainActivity : AppCompatActivity() {
                 //Hata aldığında burası çalışır.
             }
         })*/
+
+        //Kisi_ad ile sorgu oluşturup gelen verileri okuma
+        val sorgu = refKisiler.orderByChild("kisi_ad").equalTo("Ahmet")
+
+        sorgu.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(ds: DataSnapshot) {
+                for (p in ds.children) {
+                    val kisi = p.getValue(Kisiler::class.java)
+
+                    if( kisi != null )
+                    {
+                        val key = p.key
+                        Log.e("****************", "******************")
+                        Log.e("kisi key", key.toString())
+                        kisi.kisi_ad?.let { Log.e("kisi ad", it) }
+                        Log.e("kisi yas", (kisi.kisi_yas).toString())
+                        Log.e("****************", "******************")
+                    }
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
 
     }
 }
