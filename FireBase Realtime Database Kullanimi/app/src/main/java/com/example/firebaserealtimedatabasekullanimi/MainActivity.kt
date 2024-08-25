@@ -28,7 +28,15 @@ class MainActivity : AppCompatActivity() {
         val kisi = Kisiler("Sedat",11) //Değer ata
         refKisiler.push().setValue(kisi) // Atanan değerin kaydını oluştur.*/
 
-        //Kisi Sil
-        refKisiler.child("-O58oa1Xz-CDPn6jJ8sn").removeValue()
+        /*//Kişi Sil
+        refKisiler.child("-O58oa1Xz-CDPn6jJ8sn").removeValue()*/
+
+        /*//Kisi Update
+        val updateInfo = HashMap<String, Any>()
+        updateInfo["kisi_ad"] = "Yeni Mehmet"
+        updateInfo["kisi_yas"] = 100
+
+        refKisiler.child("-O58oLo8T7qN-RRlUiv1").updateChildren(updateInfo)*/
+
     }
 }
