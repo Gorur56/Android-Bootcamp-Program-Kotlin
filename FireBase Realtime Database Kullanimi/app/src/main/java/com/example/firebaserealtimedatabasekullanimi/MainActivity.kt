@@ -1,12 +1,16 @@
 package com.example.firebaserealtimedatabasekullanimi
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.Firebase
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.database
 
 class MainActivity : AppCompatActivity() {
@@ -42,6 +46,32 @@ class MainActivity : AppCompatActivity() {
         refKisiler.child("-O58oLo8T7qN-RRlUiv1").updateChildren(updateInfo)*/
 
         //VERİ OKUMA
+
+        refKisiler.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(ds: DataSnapshot) {
+                //Veri Okuma
+                for( p in  ds.children) {
+                    val kisi = p.getValue(Kisiler::class.java)
+
+                    if( kisi != null )
+                    {
+                        val key = p.key
+                        Log.e("****************", "******************")
+                        Log.e("kisi key", key.toString())
+                        kisi.kisi_ad?.let { Log.e("kisi ad", it) }
+                        Log.e("kisi yas", (kisi.kisi_yas).toString())
+                        Log.e("****************", "******************")
+
+
+                    }
+                }
+
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                //Hata aldığında burası çalışır.
+            }
+        })
 
     }
 }
