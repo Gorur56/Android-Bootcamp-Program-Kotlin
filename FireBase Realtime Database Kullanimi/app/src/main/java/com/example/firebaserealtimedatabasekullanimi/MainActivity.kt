@@ -23,7 +23,12 @@ class MainActivity : AppCompatActivity() {
         val database = FirebaseDatabase.getInstance() //Firebase 'den yetki alma
 
         val refKisiler = database.getReference("kisiler") //Tablo oluşturma
-        val kisi = Kisiler("Ahmet",18) //Değer ata
-        refKisiler.push().setValue(kisi) // Atanan değerin kaydını oluştur.
+
+        /*//Kişi Kayıt
+        val kisi = Kisiler("Sedat",11) //Değer ata
+        refKisiler.push().setValue(kisi) // Atanan değerin kaydını oluştur.*/
+
+        //Kisi Sil
+        refKisiler.child("-O58oa1Xz-CDPn6jJ8sn").removeValue()
     }
 }
