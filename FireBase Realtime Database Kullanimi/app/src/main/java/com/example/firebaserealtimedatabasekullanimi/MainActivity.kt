@@ -24,19 +24,24 @@ class MainActivity : AppCompatActivity() {
 
         val refKisiler = database.getReference("kisiler") //Tablo oluşturma
 
-        /*//Kişi Kayıt
+        /*
+        //KİŞİ KAYIT
         val kisi = Kisiler("Sedat",11) //Değer ata
         refKisiler.push().setValue(kisi) // Atanan değerin kaydını oluştur.*/
 
-        /*//Kişi Sil
+        /*
+        //KİŞİ SİL
         refKisiler.child("-O58oa1Xz-CDPn6jJ8sn").removeValue()*/
 
-        /*//Kisi Update
+        /*
+        //KİŞİ UPDATE
         val updateInfo = HashMap<String, Any>()
         updateInfo["kisi_ad"] = "Yeni Mehmet"
         updateInfo["kisi_yas"] = 100
 
         refKisiler.child("-O58oLo8T7qN-RRlUiv1").updateChildren(updateInfo)*/
+
+        //VERİ OKUMA
 
     }
 }
