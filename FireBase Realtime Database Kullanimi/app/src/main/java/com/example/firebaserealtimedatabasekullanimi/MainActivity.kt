@@ -76,7 +76,14 @@ class MainActivity : AppCompatActivity() {
         })*/
 
         //Kisi_ad ile sorgu oluşturup gelen verileri okuma
-        val sorgu = refKisiler.orderByChild("kisi_ad").equalTo("Ahmet")
+        //val sorgu = refKisiler.orderByChild("kisi_ad").equalTo("Ahmet")
+
+        //Limit
+        //val sorgu = refKisiler.limitToFirst(2) //ilk iki kaydı getirir
+        //val sorgu = refKisiler.limitToLast(2) //son iki kaydı getirir
+
+        //OrderBy sorgu
+        val sorgu = refKisiler.orderByChild("kisi_yas").startAt(30.0).endAt(50.0) //30 ile 50 yaş arasındaki kisileri getir
 
         sorgu.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(ds: DataSnapshot) {
