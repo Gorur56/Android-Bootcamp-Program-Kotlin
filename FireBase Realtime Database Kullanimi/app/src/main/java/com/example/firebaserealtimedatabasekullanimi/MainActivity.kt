@@ -45,6 +45,7 @@ class MainActivity : AppCompatActivity() {
 
         refKisiler.child("-O58oLo8T7qN-RRlUiv1").updateChildren(updateInfo)*/
 
+        /*
         //VERİ OKUMA
 
         refKisiler.addValueEventListener(object : ValueEventListener {
@@ -71,7 +72,7 @@ class MainActivity : AppCompatActivity() {
             override fun onCancelled(error: DatabaseError) {
                 //Hata aldığında burası çalışır.
             }
-        })
+        })*/
 
     }
 }
