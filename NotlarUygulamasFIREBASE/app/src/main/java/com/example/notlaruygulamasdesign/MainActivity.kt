@@ -12,11 +12,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.notlaruygulamasdesign.adapter.NotlarAdapter
 import com.example.notlaruygulamasdesign.data.Notlar
 import com.example.notlaruygulamasdesign.databinding.ActivityMainBinding
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var notlarListe: ArrayList<Notlar>
     private lateinit var adapter: NotlarAdapter
+    private lateinit var refNotlar:DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -30,31 +36,64 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.mainActivityToolbarTitle = "Notlar Uygulaması"
-        binding.toolbar.subtitle = "Ortalama: 60"
         setSupportActionBar(binding.toolbar)
 
 
         val rv: RecyclerView = findViewById(R.id.rv)
         rv.setHasFixedSize(true)
-
         //Alt Alta görünmesi için
         rv.layoutManager = LinearLayoutManager(this)
 
+        //Firebase 'de notlar tablosuna eriş
+        val db = FirebaseDatabase.getInstance()
+        refNotlar = db.getReference("notlar")
+
         notlarListe = ArrayList()
-
-        val n1 = Notlar(1,"Tarih",40,80)
-        val n2 = Notlar(2,"Kimya",70,50)
-        val n3 = Notlar(3,"Fizik",30,60)
-
-        notlarListe.add(n1)
-        notlarListe.add(n2)
-        notlarListe.add(n3)
 
         adapter = NotlarAdapter(this,notlarListe)
         rv.adapter = adapter
+
+        tumNotlar()
+
         binding.fab.setOnClickListener{
             startActivity(Intent(this@MainActivity,NotKayitActivity::class.java))
         }
+    }
+
+    fun tumNotlar(){
+        refNotlar.addValueEventListener(object : ValueEventListener{
+            override fun onDataChange(d: DataSnapshot) {
+                //Firebase her güncellediğinde burası update olacak.
+                //Veriileri alıyoruz.
+                notlarListe.clear()
+
+                var toplam = 0
+
+                for( c in d.children) {
+                    val not = c.getValue(Notlar::class.java)
+
+                    if( not != null) {
+                        not.not_id = c.key
+                        notlarListe.add(not)
+                        toplam += (not.not1!! + not.not2!!)/2
+                    }
+                }
+
+                //Gelen değerleri arayüzde göster
+                adapter.notifyDataSetChanged()
+
+                if( toplam != 0) {
+                    binding.toolbar.subtitle = "Ortalama: ${toplam/notlarListe.size}"
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                //Hata  aldığında çalışır.
+                TODO("Not yet implemented")
+            }
+
+        })
+
     }
 
     override fun onBackPressed() {
