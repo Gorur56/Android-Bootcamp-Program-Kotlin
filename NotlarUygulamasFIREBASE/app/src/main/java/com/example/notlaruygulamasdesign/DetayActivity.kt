@@ -11,9 +11,14 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.notlaruygulamasdesign.data.Notlar
 import com.example.notlaruygulamasdesign.databinding.ActivityDetayBinding
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class DetayActivity : AppCompatActivity() {
+    private lateinit var not:Notlar
+    private lateinit var refNotlar: DatabaseReference
     private lateinit var binding: ActivityDetayBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -29,7 +34,10 @@ class DetayActivity : AppCompatActivity() {
         binding.detayActivityToolbarTitle = "Not Detay"
         setSupportActionBar(binding.toolbarDetay)
 
-        val not = intent.getSerializableExtra("nesne") as Notlar
+        val db = FirebaseDatabase.getInstance()
+        refNotlar = db.getReference("notlar")
+
+        not = intent.getSerializableExtra("nesne") as Notlar
 
         binding.editTextDersDetay.setText(not.ders_adi)
         binding.editTextNot1Detay.setText((not.not1).toString())
@@ -50,6 +58,7 @@ class DetayActivity : AppCompatActivity() {
                 Snackbar.make(binding.toolbarDetay,"Silinsin mi ?",Snackbar.LENGTH_SHORT)
                     .setAction("EVET")
                     {
+                        refNotlar.child(not.not_id!!).removeValue()
                         startActivity(Intent(this@DetayActivity,MainActivity::class.java))
                         finish()
                     }.show()
