@@ -2,6 +2,7 @@ package com.example.notlaruygulamasdesign
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
@@ -67,6 +68,32 @@ class DetayActivity : AppCompatActivity() {
             }
 
             R.id.action_duzenle -> {
+                val ders_adi = binding.editTextDersDetay.text.toString().trim()
+                val not1 = binding.editTextNot1Detay.text.toString().trim()
+                val not2 = binding.editTextNot2Detay.text.toString().trim()
+
+                if( TextUtils.isEmpty(ders_adi)) {
+                   Snackbar.make(binding.toolbarDetay,"Ders adını giriniz.", Snackbar.LENGTH_SHORT).show()
+                   return false
+                }
+
+                if( TextUtils.isEmpty(not1)) {
+                    Snackbar.make(binding.toolbarDetay,"1. Notu giriniz.", Snackbar.LENGTH_SHORT).show()
+                    return false
+                }
+
+                if( TextUtils.isEmpty(not2)) {
+                    Snackbar.make(binding.toolbarDetay,"2. Notu giriniz.", Snackbar.LENGTH_SHORT).show()
+                    return false
+                }
+
+                val bilgiler = HashMap<String,Any>()
+                bilgiler.put("ders_adi",ders_adi)
+                bilgiler.put("not1",not1.toInt())
+                bilgiler.put("not2",not2.toInt())
+
+                refNotlar.child(not.not_id!!).updateChildren(bilgiler) //güncelle
+
                 startActivity(Intent(this@DetayActivity,MainActivity::class.java))
                 finish()
                 return true

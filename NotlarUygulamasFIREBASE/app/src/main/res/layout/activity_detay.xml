@@ -39,7 +39,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbarDetay" />
+            app:layout_constraintTop_toBottomOf="@+id/toolbarDetay"
+            app:layout_constraintVertical_bias="0.5" />
 
         <EditText
             android:id="@+id/editTextNot1Detay"
@@ -52,7 +53,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextDersDetay" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextDersDetay"
+            app:layout_constraintVertical_bias="0.5" />
 
         <EditText
             android:id="@+id/editTextNot2Detay"
@@ -61,21 +63,12 @@
             android:ems="10"
             android:hint="Not 2"
             android:inputType="text"
-            app:layout_constraintBottom_toTopOf="@+id/buttonGuncelle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextNot1Detay" />
-
-        <Button
-            android:id="@+id/buttonGuncelle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="GÜNCELLE"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextNot2Detay" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextNot1Detay"
+            app:layout_constraintVertical_bias="0.5" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
