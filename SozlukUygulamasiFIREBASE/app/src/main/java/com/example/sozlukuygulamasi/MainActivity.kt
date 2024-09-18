@@ -12,18 +12,17 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sozlukuygulamasi.data.Kelimeler
-import com.example.sozlukuygulamasi.data.KelimelerCevap
-import com.example.sozlukuygulamasi.retrofit.ApiUtils
-import com.example.sozlukuygulamasi.retrofit.KelimelerDaoInterface
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
     private lateinit var kelimelerListe:ArrayList<Kelimeler>
     private lateinit var adapter:KelimlerAdapter
+    private lateinit var  refKelimeler:DatabaseReference
 
-    private lateinit var kdi:KelimelerDaoInterface
     private lateinit var  rv: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,9 +43,15 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
         rv.setHasFixedSize(true)
         rv.layoutManager = LinearLayoutManager(this)
 
-        kdi = ApiUtils.getKelimelerDaoInterface()
+        val db = FirebaseDatabase.getInstance()
+        refKelimeler = db.getReference("kelimeler")
 
-        tumKelimeler()
+        kelimelerListe = ArrayList()
+
+        adapter = KelimlerAdapter(this,kelimelerListe)
+        rv.adapter = adapter
+
+        tumKelimler()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -62,7 +67,6 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
     override fun onQueryTextSubmit(query: String?): Boolean {
         //Arama tuşuna basınca search yapar.
         if (query != null) {
-            aramaYap(query)
             Log.e("Gönderilen Arama",query)
         }
         return true
@@ -71,42 +75,30 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
     override fun onQueryTextChange(newText: String?): Boolean {
         //Her girilen harf için search yapar.
         if (newText != null) {
-            aramaYap(newText)
             Log.e("Harf girdikce", newText)
         }
         return true
     }
 
-    fun tumKelimeler(){
-        kdi.tumKelimeler().enqueue(object : Callback<KelimelerCevap>{
-            override fun onResponse(call: Call<KelimelerCevap>, response: Response<KelimelerCevap>) {
+    fun tumKelimler(){
+        refKelimeler.addValueEventListener(object: ValueEventListener{
+            override fun onDataChange(d: DataSnapshot) {
+                kelimelerListe.clear()
 
-                if( response != null)
-                {
-                    val liste = response.body()?.kelimeler
-                    adapter = liste?.let { KelimlerAdapter(this@MainActivity, it) }!!
-                    rv.adapter = adapter
+                for(c in d.children){
+                    val kelime = c.getValue(Kelimeler::class.java)
+                    if( kelime != null)
+                    {
+                        kelime.kelime_id = c.key
+                        kelimelerListe.add(kelime)
+                    }
                 }
+
+                adapter.notifyDataSetChanged() //Arayüzü günceller
             }
 
-            override fun onFailure(call: Call<KelimelerCevap>, t: Throwable) {
-
-            }
-        })
-    }
-
-    fun aramaYap(aramaKelimle: String){
-        kdi.kelimeAra(aramaKelimle).enqueue(object : Callback<KelimelerCevap> {
-            override fun onResponse(call: Call<KelimelerCevap>, response: Response<KelimelerCevap>) {
-                if(response != null) {
-                    val liste = response.body()?.kelimeler
-                    adapter = liste?.let { KelimlerAdapter(this@MainActivity,it) }!!
-                    rv.adapter = adapter
-                }
-            }
-
-            override fun onFailure(call: Call<KelimelerCevap>, t: Throwable) {
-
+            override fun onCancelled(error: DatabaseError) {
+                //Hata aldığında çalışan blok
             }
         })
     }
