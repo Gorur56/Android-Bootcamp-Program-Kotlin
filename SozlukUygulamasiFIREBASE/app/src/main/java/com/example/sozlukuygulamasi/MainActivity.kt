@@ -64,19 +64,17 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
         return super.onCreateOptionsMenu(menu)
     }
 
-    override fun onQueryTextSubmit(query: String?): Boolean {
+    override fun onQueryTextSubmit(query: String): Boolean {
         //Arama tuşuna basınca search yapar.
-        if (query != null) {
-            Log.e("Gönderilen Arama",query)
-        }
+        aramaYap(query)
+        Log.e("Gönderilen Arama",query)
         return true
     }
 
-    override fun onQueryTextChange(newText: String?): Boolean {
+    override fun onQueryTextChange(newText: String): Boolean {
         //Her girilen harf için search yapar.
-        if (newText != null) {
-            Log.e("Harf girdikce", newText)
-        }
+        aramaYap(newText)
+        Log.e("Harf girdikce", newText)
         return true
     }
 
@@ -101,5 +99,33 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
                 //Hata aldığında çalışan blok
             }
         })
+    }
+
+    fun aramaYap(arananKelime:String){
+        refKelimeler.addValueEventListener(object: ValueEventListener {
+            override fun onDataChange(d: DataSnapshot) {
+                kelimelerListe.clear()
+
+                for(c in d.children){
+                    val kelime = c.getValue(Kelimeler::class.java)
+
+                    if ( kelime != null)
+                    {
+                        if( kelime.ingilizce!!.contains(arananKelime))
+                        {
+                            kelime.kelime_id = c.key
+                            kelimelerListe.add(kelime)
+                        }
+                    }
+                }
+
+                adapter.notifyDataSetChanged()
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
+
     }
 }
