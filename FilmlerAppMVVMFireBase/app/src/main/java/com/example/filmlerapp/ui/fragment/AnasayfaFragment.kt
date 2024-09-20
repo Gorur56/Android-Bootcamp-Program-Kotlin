@@ -32,9 +32,11 @@ class AnasayfaFragment : Fragment() {
             binding.filmlerAdapter = filmlerAdapter
         }
 
+        val db = Firebase.firestore
+        val collectionFilmler = db.collection("filmler")
      /*   Firebase'de tablo oluşturdu. Bir kere çalıştıktan sonra burayı kapat.
         val db = Firebase.firestore
-        val collectionFilmler = db.collection("Filmler")
+        val collectionFilmler = db.collection("filmler")
 
         val f1 = Filmler("","Djongo", "django",24)
         val f2 = Filmler("","Interstellar", "interstellar",32)
