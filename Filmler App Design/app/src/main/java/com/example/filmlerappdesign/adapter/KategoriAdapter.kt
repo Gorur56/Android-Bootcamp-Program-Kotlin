@@ -34,7 +34,7 @@ class KategoriAdapter( private val mContext: Context,
         holder.textViewKategoriAd.text = kategori.kategori_ad
 
         holder.kategori_card.setOnClickListener {
-            
+
         }
     }
 
