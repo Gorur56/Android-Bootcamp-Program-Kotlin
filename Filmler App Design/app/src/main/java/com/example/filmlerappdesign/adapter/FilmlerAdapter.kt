@@ -40,7 +40,7 @@ class FilmlerAdapter( private val mContext: Context,
             ,"drawable", mContext.packageName)) //Dinamik resim gösterme
 
         holder.film_card.setOnClickListener {
-            
+
         }
 
     }
