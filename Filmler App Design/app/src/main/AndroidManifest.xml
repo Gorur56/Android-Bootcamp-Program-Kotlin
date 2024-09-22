@@ -13,6 +13,9 @@
         android:theme="@style/Theme.FilmlerAppDesign"
         tools:targetApi="31">
         <activity
+            android:name=".DetayActivity"
+            android:exported="false" />
+        <activity
             android:name=".DeatyActivity"
             android:exported="false" />
         <activity
