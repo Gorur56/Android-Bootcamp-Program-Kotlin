@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.example.filmlerappdesign" />
+                  <option name="mobileSdkAppId" value="1:764750681547:android:002904fcb725f668c2d24e" />
+                  <option name="projectId" value="udemy-egitim-2-7c285" />
+                  <option name="projectNumber" value="764750681547" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
