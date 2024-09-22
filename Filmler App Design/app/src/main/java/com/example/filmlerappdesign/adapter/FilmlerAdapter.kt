@@ -1,6 +1,7 @@
 package com.example.filmlerappdesign.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.filmlerappdesign.DetayActivity
 import com.example.filmlerappdesign.R
 import com.example.filmlerappdesign.entity.Filmler
 
@@ -40,7 +42,9 @@ class FilmlerAdapter( private val mContext: Context,
             ,"drawable", mContext.packageName)) //Dinamik resim gösterme
 
         holder.film_card.setOnClickListener {
-
+            val intent = Intent(mContext, DetayActivity::class.java)
+            intent.putExtra("filmNesne",film)
+            mContext.startActivity(intent)
         }
 
     }
