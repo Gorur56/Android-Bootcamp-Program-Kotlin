@@ -38,17 +38,6 @@ class FilmlerActivity : AppCompatActivity() {
 
         filmList = ArrayList()
 
-        val k = Kategoriler(1,"Dram")
-
-        val y = Yonetmenler(1,"Quentin Tarantino")
-
-        val f1 = Filmler(1,"Django",2008,"django",k,y)
-        val f2 = Filmler(2,"Inception",2009,"inception",k,y)
-        val f3 = Filmler(3,"The Pianist",2010,"thepianist",k,y)
-
-        filmList.add(f1)
-        filmList.add(f2)
-        filmList.add(f3)
 
         adapter = FilmlerAdapter(this ,filmList)
         filmRv.adapter = adapter

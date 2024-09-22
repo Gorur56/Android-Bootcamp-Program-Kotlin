@@ -28,7 +28,7 @@ class DetayActivity : AppCompatActivity() {
         val textViewFilmYil: TextView = findViewById(R.id.textViewFilmYil)
         textViewFilmYil.text = (film.film_yil).toString()
         val textViewYonetmen: TextView = findViewById(R.id.textViewYonetmen)
-        textViewYonetmen.text = film.yonetmenler.yonetmen_ad
+        textViewYonetmen.text = film.yonetmen_ad
 
         val imageViewResim: ImageView = findViewById(R.id.imageViewResim)
 

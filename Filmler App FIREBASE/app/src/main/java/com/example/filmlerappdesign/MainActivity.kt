@@ -35,13 +35,7 @@ class MainActivity : AppCompatActivity() {
 
         kategoriList = ArrayList()
 
-        val k1 = Kategoriler(1,"Komedi")
-        val k2 = Kategoriler(2,"Bilim kurgu")
-        val k3 = Kategoriler(3,"Dram")
 
-        kategoriList.add(k1)
-        kategoriList.add(k2)
-        kategoriList.add(k3)
 
         adapter = KategoriAdapter(this,kategoriList)
         kagetoriRV.adapter = adapter
