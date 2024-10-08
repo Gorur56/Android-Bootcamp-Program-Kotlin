@@ -13,10 +13,16 @@ import com.example.filmlerappdesign.adapter.FilmlerAdapter
 import com.example.filmlerappdesign.entity.Filmler
 import com.example.filmlerappdesign.entity.Kategoriler
 import com.example.filmlerappdesign.entity.Yonetmenler
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class FilmlerActivity : AppCompatActivity() {
     private lateinit var filmList:ArrayList<Filmler>
     private lateinit var adapter: FilmlerAdapter
+    private lateinit var refFilmler:DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -26,6 +32,9 @@ class FilmlerActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val db = FirebaseDatabase.getInstance()
+        refFilmler = db.getReference("filmler")
 
         val kategori = intent.getSerializableExtra("kategoriNesne") as Kategoriler
 
@@ -41,5 +50,32 @@ class FilmlerActivity : AppCompatActivity() {
 
         adapter = FilmlerAdapter(this ,filmList)
         filmRv.adapter = adapter
+
+        filmByKategoriAd(kategori.kategori_ad)
+    }
+
+    fun filmByKategoriAd(kategori_ad:String?){
+        val sorgu = refFilmler.orderByChild("kategori_ad").equalTo(kategori_ad)
+
+        sorgu.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(d: DataSnapshot) {
+                filmList.clear()
+
+                for(c in d.children){
+                    val film = c.getValue(Filmler::class.java)
+
+                    if(film != null){
+                        film.film_id = c.key
+                        filmList.add(film)
+                    }
+                }
+
+                adapter.notifyDataSetChanged()
+            }
+
+            override fun onCancelled(p0: DatabaseError) {
+
+            }
+        })
     }
 }

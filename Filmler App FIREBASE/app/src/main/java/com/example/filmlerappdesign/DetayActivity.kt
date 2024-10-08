@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.filmlerappdesign.entity.Filmler
+import com.squareup.picasso.Picasso
 
 class DetayActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,10 +30,11 @@ class DetayActivity : AppCompatActivity() {
         textViewFilmYil.text = (film.film_yil).toString()
         val textViewYonetmen: TextView = findViewById(R.id.textViewYonetmen)
         textViewYonetmen.text = film.yonetmen_ad
+        val imageViewFilmResim: ImageView = findViewById(R.id.imageViewFilmResim)
 
-        val imageViewResim: ImageView = findViewById(R.id.imageViewResim)
+        //imageViewResim.setImageResource(resources.getIdentifier(film.film_resim,"drawable",packageName))
 
-        imageViewResim.setImageResource(resources.getIdentifier(film.film_resim,"drawable",packageName))
-
+        val url = "http://kasimadalan.pe.hu/filmler/resimler/${film.film_resim}"
+        Picasso.get().load(url).into(imageViewFilmResim)
     }
 }

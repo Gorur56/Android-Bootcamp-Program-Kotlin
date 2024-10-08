@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.filmlerappdesign.DetayActivity
 import com.example.filmlerappdesign.R
 import com.example.filmlerappdesign.entity.Filmler
+import com.squareup.picasso.Picasso
 
 class FilmlerAdapter( private val mContext: Context,
                       private val filmlerList:List<Filmler>)
@@ -38,8 +39,13 @@ class FilmlerAdapter( private val mContext: Context,
         val film = filmlerList.get(position)
 
         holder.textviewFilmAd.text = film.film_ad
+
+        /*//lokalden resimleri alıyorduk şimdi internet üzerinden alacağız.
         holder.imageViewFilmResim.setImageResource(mContext.resources.getIdentifier(film.film_resim
-            ,"drawable", mContext.packageName)) //Dinamik resim gösterme
+            ,"drawable", mContext.packageName)) //Dinamik resim gösterme */
+
+        val url = "http://kasimadalan.pe.hu/filmler/resimler/${film.film_resim}"
+        Picasso.get().load(url).into(holder.imageViewFilmResim)
 
         holder.film_card.setOnClickListener {
             val intent = Intent(mContext, DetayActivity::class.java)
