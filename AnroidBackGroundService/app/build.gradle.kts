@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    namespace = "com.example.foregroudservices"
+    namespace = "com.example.anroidbackgroundservice"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.foregroudservices"
-        minSdk = 21
+        applicationId = "com.example.anroidbackgroundservice"
+        minSdk = 27
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
