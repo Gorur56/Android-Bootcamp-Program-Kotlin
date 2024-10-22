@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    namespace = "com.example.myforegroundservice"
+    namespace = "com.example.reminderservice"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.myforegroundservice"
-        minSdk = 27
+        applicationId = "com.example.reminderservice"
+        minSdk = 19
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -32,10 +32,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
-    }
-
-    buildFeatures {
-        viewBinding = true
     }
 }
 
