@@ -23,6 +23,8 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        buttonAsagidanEkranaGrisis()
+
         binding.button.setOnClickListener {
             //Snackbar.make(it,"Test",Snackbar.LENGTH_SHORT).show()
             //alphaAnimasyon()
@@ -30,6 +32,14 @@ class MainActivity : AppCompatActivity() {
             //rotateAnimasyon()
             translationAnimasyon()
         }
+    }
+
+    fun buttonAsagidanEkranaGrisis(){
+        val t = ObjectAnimator.ofFloat(binding.button,"translationY",800.0f,0.0f).apply {
+            duration = 1000
+        }
+
+        t.start()
     }
 
     fun translationAnimasyon() {
