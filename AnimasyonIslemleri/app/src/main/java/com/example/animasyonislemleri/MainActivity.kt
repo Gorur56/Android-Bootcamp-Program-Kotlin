@@ -27,15 +27,27 @@ class MainActivity : AppCompatActivity() {
             //Snackbar.make(it,"Test",Snackbar.LENGTH_SHORT).show()
             //alphaAnimasyon()
             //scaleAnimasyon()
-            rotateAnimasyon()
+            //rotateAnimasyon()
+            translationAnimasyon()
         }
+    }
+
+    fun translationAnimasyon() {
+        val t = ObjectAnimator.ofFloat(binding.textViewYazi, "translationY", 0.0f, -50.0f).apply {
+            //translationX 0.0f, 50.0f: yerinden 50 kadar kayar.
+            //translationX 0.0f, -50.0f: yerinden tersine 50 kadar kayar.
+
+            //translationY 0.0f, 50.0f: yerinden 50 konum aşağı hareket eder
+            //translationY 0.0f, -50.0f: yerinden 50 konum yukarı hareket eder
+            duration = 3000
+        }
+        t.start()
     }
 
     fun rotateAnimasyon(){
         val r = ObjectAnimator.ofFloat(binding.textViewYazi,"rotation",90.0f,45.0f).apply {
             //45.0f,90.0f: önce 45 'e gelir 45 dan başlar 90 da biter. Saat yönünde
             //90.0f,45.0f: önce 90 a gelir 90 dan başlar 45 de biter. saat yönünün tersinde
-
             duration = 3000
         }
 
