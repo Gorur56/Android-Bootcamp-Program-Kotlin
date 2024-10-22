@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<set xmlns:android="http://schemas.android.com/apk/res/android">
-    <!--butonu yatayda (X ekseninden) 3 saniyeden %50 den %100 e kadar kaydır-->
-    <translate
-        android:duration="3000"
-        android:fromXDelta="50%"
-        android:toXDelta="100%"/>
-</set>
