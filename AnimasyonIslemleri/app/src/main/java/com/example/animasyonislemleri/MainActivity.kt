@@ -25,8 +25,33 @@ class MainActivity : AppCompatActivity() {
 
         binding.button.setOnClickListener {
             //Snackbar.make(it,"Test",Snackbar.LENGTH_SHORT).show()
-            alphaAnimasyon()
+            //alphaAnimasyon()
+            //scaleAnimasyon()
+            rotateAnimasyon()
         }
+    }
+
+    fun rotateAnimasyon(){
+        val r = ObjectAnimator.ofFloat(binding.textViewYazi,"rotation",90.0f,45.0f).apply {
+            //45.0f,90.0f: önce 45 'e gelir 45 dan başlar 90 da biter. Saat yönünde
+            //90.0f,45.0f: önce 90 a gelir 90 dan başlar 45 de biter. saat yönünün tersinde
+
+            duration = 3000
+        }
+
+        r.start()
+    }
+
+    fun scaleAnimasyon(){
+        val s = ObjectAnimator.ofFloat(binding.imageViewResim,"scaleY",1.0f,0.50f).apply {
+            //ScaleX => yatay ScaleY => dikey
+            // 1.0f,2.0f: Resmi yatayda 2 kat büyütüyoruz
+            //1.0f,0.50f: Resmi dikeyde yarısı kadar küçült
+
+            duration = 3000
+        }
+
+        s.start()
     }
 
     fun alphaAnimasyon(){
