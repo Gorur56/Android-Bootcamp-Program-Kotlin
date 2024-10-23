@@ -2,6 +2,7 @@ package com.example.animasyonislemleri
 
 import android.animation.ObjectAnimator
 import android.os.Bundle
+import android.view.animation.BounceInterpolator
 import android.view.animation.OvershootInterpolator
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -42,7 +43,8 @@ class MainActivity : AppCompatActivity() {
     fun ivmeOzelligi() {
         val t = ObjectAnimator.ofFloat(binding.imageViewResim,"translationY",0.0f, 300.0f).apply {
             duration = 1000
-            interpolator = OvershootInterpolator()
+            //interpolator = OvershootInterpolator() //Dışarı çıkıp içeri doğru geçiş yapar.
+            interpolator = BounceInterpolator() //yere düşer gibi bir etki yaratır
         }
         t.start()
     }
