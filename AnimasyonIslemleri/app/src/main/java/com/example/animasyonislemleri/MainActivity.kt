@@ -1,5 +1,6 @@
 package com.example.animasyonislemleri
 
+import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.view.animation.BounceInterpolator
@@ -37,8 +38,23 @@ class MainActivity : AppCompatActivity() {
             //translationAnimasyon()
             //gecikmeOzelligi()
             //ivmeOzelligi()
-            tekrarOzelligi()
+            //tekrarOzelligi()
+            cokluAnimasyon()
         }
+    }
+
+    fun cokluAnimasyon() {
+        //Aynı anda bir nesne birden fazla animasyon özellik atanan durumdur.
+        val a = ObjectAnimator.ofFloat(binding.imageViewResim, "alpha",1.0f,0.0f)
+        val sX = ObjectAnimator.ofFloat(binding.imageViewResim, "scaleX",1.0f,2.0f)
+        val sY = ObjectAnimator.ofFloat(binding.imageViewResim, "scaleY",1.0f,3.0f)
+
+        val coklu = AnimatorSet().apply {
+            duration = 1000
+            playTogether(a,sX,sY)
+        }
+
+        coklu.start()
     }
 
     fun tekrarOzelligi() {
