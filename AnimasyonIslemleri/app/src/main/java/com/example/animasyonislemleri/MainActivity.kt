@@ -22,8 +22,10 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        textviewSagdanEkranaGiris()
+        imageSoldanEkranaGiris()
 
-        buttonAsagidanEkranaGrisis()
+        buttonAsagidanEkranaGiris()
 
         binding.button.setOnClickListener {
             //Snackbar.make(it,"Test",Snackbar.LENGTH_SHORT).show()
@@ -34,7 +36,23 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun buttonAsagidanEkranaGrisis(){
+    fun imageSoldanEkranaGiris(){
+        val t = ObjectAnimator.ofFloat(binding.imageViewResim,"translationX",-800.0f,0.0f).apply {
+            duration = 1000
+        }
+
+        t.start()
+    }
+
+    fun textviewSagdanEkranaGiris(){
+        val t = ObjectAnimator.ofFloat(binding.textViewYazi,"translationX",800.0f,0.0f).apply {
+            duration = 1000
+        }
+
+        t.start()
+    }
+
+    fun buttonAsagidanEkranaGiris(){
         val t = ObjectAnimator.ofFloat(binding.button,"translationY",800.0f,0.0f).apply {
             duration = 1000
         }
