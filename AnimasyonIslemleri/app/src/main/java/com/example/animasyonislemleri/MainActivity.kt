@@ -39,8 +39,22 @@ class MainActivity : AppCompatActivity() {
             //gecikmeOzelligi()
             //ivmeOzelligi()
             //tekrarOzelligi()
-            cokluAnimasyon()
+            //cokluAnimasyon()
+            ardisikAnimasyon()
         }
+    }
+
+    fun ardisikAnimasyon() {
+        //animasyon özelliklerini sırayla çalıştırır
+        val a = ObjectAnimator.ofFloat(binding.imageViewResim, "alpha",1.0f,0.0f)
+        val sX = ObjectAnimator.ofFloat(binding.imageViewResim, "scaleX",1.0f,2.0f)
+        val sY = ObjectAnimator.ofFloat(binding.imageViewResim, "scaleY",1.0f,3.0f)
+
+        val ardisik = AnimatorSet().apply {
+            duration = 1000
+            playSequentially(sX,sY,a)
+        }
+        ardisik.start()
     }
 
     fun cokluAnimasyon() {
@@ -53,7 +67,6 @@ class MainActivity : AppCompatActivity() {
             duration = 1000
             playTogether(a,sX,sY)
         }
-
         coklu.start()
     }
 
