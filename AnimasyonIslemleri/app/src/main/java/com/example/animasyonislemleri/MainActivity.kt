@@ -22,18 +22,27 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        textviewSagdanEkranaGiris()
-        imageSoldanEkranaGiris()
+        //textviewSagdanEkranaGiris()
+        //imageSoldanEkranaGiris()
 
-        buttonAsagidanEkranaGiris()
+        //buttonAsagidanEkranaGiris()
 
         binding.button.setOnClickListener {
             //Snackbar.make(it,"Test",Snackbar.LENGTH_SHORT).show()
             //alphaAnimasyon()
             //scaleAnimasyon()
             //rotateAnimasyon()
-            translationAnimasyon()
+            //translationAnimasyon()
+            gecikmeOzelligi()
         }
+    }
+
+    fun gecikmeOzelligi(){
+        val t = ObjectAnimator.ofFloat(binding.imageViewResim,"translationY",0.0f,50.0f).apply {
+            duration = 3000
+            startDelay = 2000 // animasyon 2 saniye gecikmeli başlayacak.
+        }
+        t.start()
     }
 
     fun imageSoldanEkranaGiris(){
