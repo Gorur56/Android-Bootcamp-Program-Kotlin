@@ -36,8 +36,19 @@ class MainActivity : AppCompatActivity() {
             //rotateAnimasyon()
             //translationAnimasyon()
             //gecikmeOzelligi()
-            ivmeOzelligi()
+            //ivmeOzelligi()
+            tekrarOzelligi()
         }
+    }
+
+    fun tekrarOzelligi() {
+        val t = ObjectAnimator.ofFloat(binding.imageViewResim, "translationY", 0.0f, 100.0f).apply {
+            duration = 1000
+            repeatCount = ObjectAnimator.INFINITE //Sonsuz tekrarla
+            //repeatMode = ObjectAnimator.RESTART //Başlangıça tekrar tekrar döner
+            repeatMode = ObjectAnimator.REVERSE //Aşağı yukarı sürekli kaydırır
+        }
+        t.start()
     }
 
     fun ivmeOzelligi() {
