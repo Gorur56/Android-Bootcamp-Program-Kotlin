@@ -16,3 +16,15 @@ fun isPolindromeNumber(number: Int): Boolean {
     val numberStr = number.toString()
     return numberStr == numberStr.reversed()
 }
+
+fun isPalindromeNumber(number: Int): Boolean {
+    val numberStr = number.toString() // Sayıyı stringe çevir
+    val length = numberStr.length
+
+    for (i in 0 until length / 2) {
+        if (numberStr[i] != numberStr[length - i - 1]) {
+            return false // Eğer herhangi bir karakter tersindekiyle uyuşmazsa palindrom değil
+        }
+    }
+    return true // Tüm karakterler eşleşirse palindromdur
+}
