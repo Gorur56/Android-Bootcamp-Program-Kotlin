@@ -16,6 +16,10 @@
                motion:motionTarget="@+id/buttonAlt"
                motion:framePosition="0"
                android:alpha="0.5" />
+           <KeyAttribute
+               motion:motionTarget="@+id/buttonUst"
+               motion:framePosition="25"
+               android:rotation="45" />
        </KeyFrameSet>
         <OnSwipe />
         <OnClick motion:targetId="@+id/buttonAlt" />
