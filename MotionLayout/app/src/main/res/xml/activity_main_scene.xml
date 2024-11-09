@@ -10,6 +10,7 @@
        <KeyFrameSet>
        </KeyFrameSet>
         <OnSwipe />
+        <OnClick motion:targetId="@+id/buttonAlt" />
     </Transition>
 
     <ConstraintSet android:id="@+id/start">
