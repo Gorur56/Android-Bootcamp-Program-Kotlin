@@ -27,7 +27,7 @@
            <KeyAttribute
                motion:motionTarget="@+id/buttonUst"
                motion:framePosition="50"
-               android:scaleX="1.2" />
+               android:scaleX="0.5" />
            <KeyAttribute
                motion:motionTarget="@+id/buttonAlt"
                motion:framePosition="50"
