@@ -8,6 +8,10 @@
         motion:constraintSetStart="@id/start"
         motion:duration="2110">
        <KeyFrameSet>
+           <KeyAttribute
+               motion:motionTarget="@+id/buttonUst"
+               motion:framePosition="50"
+               android:alpha="0.5" />
        </KeyFrameSet>
         <OnSwipe />
         <OnClick motion:targetId="@+id/buttonAlt" />
